@@ -78,6 +78,14 @@
       max-width:420px;
     }
 
+    .brand-nav-link{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      text-decoration:none;
+      color:inherit;
+    }
+
     .brand-text{
       display:flex;
       align-items:center;
@@ -119,6 +127,11 @@
       align-items:center;
     }
 
+    .nav-links a{
+      text-decoration:none;
+      color:inherit;
+    }
+
     .nav-links a:hover{
       color:var(--green-dark);
     }
@@ -131,6 +144,7 @@
       font-size:14px;
       font-weight:600;
       white-space:nowrap;
+      text-decoration:none;
     }
 
     /* HERO */
@@ -214,6 +228,7 @@
       font-size:15px;
       transition:.2s;
       display:inline-block;
+      text-decoration:none;
     }
 
     .btn-primary{
@@ -602,21 +617,23 @@
 
   <nav>
     <div class="container nav-wrap">
-      <div class="brand-nav">
-        <div class="logo">
-          <img src="logo-banner.png" alt="Home Harvest Network Logo">
+      <a href="index.html" class="brand-nav-link">
+        <div class="brand-nav">
+          <div class="logo">
+            <img src="logo-banner.png" alt="Home Harvest Network Logo">
+          </div>
+          <div class="brand-text">
+            <h1 class="brand-title">
+              <span>Home</span>
+              <span>Harvest</span>
+              <span>Network</span>
+            </h1>
+          </div>
         </div>
-        <div class="brand-text">
-          <h1 class="brand-title">
-            <span>Home</span>
-            <span>Harvest</span>
-            <span>Network</span>
-          </h1>
-        </div>
-      </div>
+      </a>
 
       <div class="nav-links">
-        <a href="Homepage.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="subscriptions.html">Subscriptions</a>
         <a href="for-growers.html">For Growers</a>
@@ -652,7 +669,7 @@
             Join the Waitlist
           </a>
 
-          <a href="#" class="btn btn-secondary">
+          <a href="for-growers.html" class="btn btn-secondary">
             Become a Grower
           </a>
 
@@ -964,7 +981,7 @@
           We coordinate crop planning, collection, quality control, and distribution while growers focus on producing high-quality crops.
         </p>
 
-        <a href="#" class="btn btn-primary">
+        <a href="for-growers.html" class="btn btn-primary">
           Become a Grower
         </a>
 
@@ -1012,7 +1029,7 @@
           Enjoy transparent pricing, flexible ordering, and the assurance of locally sourced, traceable ingredients for your kitchen.
         </p>
 
-        <a href="#" class="btn btn-primary">
+        <a href="for-business.html" class="btn btn-primary">
           Contact our sales team
         </a>
 
@@ -1058,9 +1075,11 @@
 
     <div class="container footer-wrap">
 
-      <div class="footer-logo">
-        <img src="logo-banner.png" alt="Home Harvest Network">
-      </div>
+      <a href="index.html" style="text-decoration:none; color:inherit;">
+        <div class="footer-logo">
+          <img src="logo-banner.png" alt="Home Harvest Network">
+        </div>
+      </a>
 
       <p class="footer-right">
         © 2024 Home Harvest Network. All rights reserved.
