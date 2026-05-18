@@ -78,6 +78,14 @@
       max-width:420px;
     }
 
+    .brand-nav-link{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      text-decoration:none;
+      color:inherit;
+    }
+
     .brand-text{
       display:flex;
       align-items:center;
@@ -119,6 +127,11 @@
       align-items:center;
     }
 
+    .nav-links a{
+      text-decoration:none;
+      color:inherit;
+    }
+
     .nav-links a:hover{
       color:var(--green-dark);
     }
@@ -131,6 +144,7 @@
       font-size:14px;
       font-weight:600;
       white-space:nowrap;
+      text-decoration:none;
     }
 
     /* HERO */
@@ -214,6 +228,7 @@
       font-size:15px;
       transition:.2s;
       display:inline-block;
+      text-decoration:none;
     }
 
     .btn-primary{
@@ -602,16 +617,18 @@
 
   <nav>
     <div class="container nav-wrap">
-      <a href="index.html" class="brand-nav">
-        <div class="logo">
-          <img src="logo-banner.png" alt="Home Harvest Network Logo">
-        </div>
-        <div class="brand-text">
-          <h1 class="brand-title">
-            <span>Home</span>
-            <span>Harvest</span>
-            <span>Network</span>
-          </h1>
+      <a href="index.html" class="brand-nav-link">
+        <div class="brand-nav">
+          <div class="logo">
+            <img src="logo-banner.png" alt="Home Harvest Network Logo">
+          </div>
+          <div class="brand-text">
+            <h1 class="brand-title">
+              <span>Home</span>
+              <span>Harvest</span>
+              <span>Network</span>
+            </h1>
+          </div>
         </div>
       </a>
 
@@ -652,7 +669,7 @@
             Join the Waitlist
           </a>
 
-          <a href="#" class="btn btn-secondary">
+          <a href="for-growers.html" class="btn btn-secondary">
             Become a Grower
           </a>
 
@@ -964,7 +981,7 @@
           We coordinate crop planning, collection, quality control, and distribution while growers focus on producing high-quality crops.
         </p>
 
-        <a href="#" class="btn btn-primary">
+        <a href="for-growers.html" class="btn btn-primary">
           Become a Grower
         </a>
 
@@ -1005,15 +1022,15 @@
         </h2>
 
         <p>
-          Home Harvest Network provides reliable, fresh, locally sourced produce supply for restaurants, grocers, schools and corporate canteens.
+          Restaurants, schools, and independent businesses can connect directly with local growers through Home Harvest Network, ensuring reliable supply of fresh produce.
         </p>
 
         <p>
-          We manage standing orders, QC, delivery scheduling and full traceability so your business always has fresh, neighbourhood-grown produce.
+          Enjoy transparent pricing, flexible ordering, and the assurance of locally sourced, traceable ingredients for your kitchen.
         </p>
 
-        <a href="#" class="btn btn-primary">
-          Partner With Us
+        <a href="for-business.html" class="btn btn-primary">
+          Contact our sales team
         </a>
 
       </div>
@@ -1024,40 +1041,52 @@
 
   <!-- CTA -->
 
-  <section class="cta" style="margin:90px 0;">
+  <section>
+
     <div class="container">
 
-      <h2>
-        Join the Fresh Food Revolution
-      </h2>
+      <div class="cta">
 
-      <p>
-        Subscribe to a weekly box, become a grower, or supply your business. Home Harvest Network is transforming how fresh food reaches KwaZulu-Natal households.
-      </p>
+        <h2>
+          Ready to grow better?
+        </h2>
 
-      <div class="cta-form">
-        <input type="email" placeholder="Your email address"/>
-        <button>
-          Get Started
-        </button>
+        <p>
+          Join thousands of households and businesses already getting fresh produce straight from local growers.
+        </p>
+
+        <form class="cta-form">
+
+          <input placeholder="Enter your email address">
+
+          <button type="submit">Join waitlist</button>
+
+        </form>
+
       </div>
 
     </div>
+
   </section>
 
   <!-- FOOTER -->
 
   <footer>
-    <div class="container footer-wrap">
-      <div class="footer-logo">
-        <img src="logo-banner.png" alt="Home Harvest Network Logo">
-      </div>
 
-      <div class="footer-right">
-        © 2025 Home Harvest Network · KwaZulu-Natal, South Africa
-      </div>
+    <div class="container footer-wrap">
+
+      <a href="index.html" style="text-decoration:none; color:inherit;">
+        <div class="footer-logo">
+          <img src="logo-banner.png" alt="Home Harvest Network">
+        </div>
+      </a>
+
+      <p class="footer-right">
+        © 2024 Home Harvest Network. All rights reserved.
+      </p>
 
     </div>
+
   </footer>
 
 </body>
