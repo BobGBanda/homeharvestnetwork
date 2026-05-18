@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | Home Harvest Network</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    :root{
+      --green:#5d8c51;
+      --green-dark:#2f4934;
+      --cream:#f7f3eb;
+      --sand:#ece4d6;
+      --text:#221a1a;
+      --muted:#677168;
+      --white:#ffffff;
+      --border:#ddd7ca;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:var(--cream);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      width:100%;
+      display:block;
+      border-radius:20px;
+    }
+
+    .container{
+      width:min(1150px,90%);
+      margin:auto;
+    }
+
+    /* NAV */
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(247,243,235,.95);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--border);
+    }
+
+    .nav-wrap{
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+      padding:12px 0;
+    }
+
+    .brand-nav{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      flex-wrap:nowrap;
+      max-width:420px;
+    }
+
+    .brand-text{
+      display:flex;
+      align-items:center;
+    }
+
+    .logo img{
+      height:110px;
+      width:auto;
+      display:block;
+    }
+
+    .brand-title{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(24px,2.6vw,34px);
+      line-height:1.05;
+      letter-spacing:-.03em;
+      text-transform:uppercase;
+      margin:0;
+      color:var(--green-dark);
+    }
+
+    .brand-title span{
+      display:block;
+    }
+
+    .brand-title span:nth-child(2){
+      margin-left:0.9rem;
+    }
+
+    .brand-title span:nth-child(3){
+      margin-left:1.8rem;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:28px;
+      color:var(--muted);
+      font-size:15px;
+      align-items:center;
+    }
+
+    .nav-links a:hover{
+      color:var(--green-dark);
+    }
+
+    .nav-btn{
+      background:var(--green-dark);
+      color:white;
+      padding:12px 20px;
+      border-radius:10px;
+      font-size:14px;
+      font-weight:600;
+      white-space:nowrap;
+    }
+
+    /* HERO */
+
+    .hero{
+      padding:110px 0 90px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr 1fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      text-transform:uppercase;
+      letter-spacing:2px;
+      color:var(--green);
+      font-size:12px;
+      font-weight:700;
+      margin-bottom:20px;
+    }
+
+    h1{
+      font-family:'Playfair Display',serif;
+      font-size:64px;
+      line-height:1.05;
+      margin-bottom:24px;
+      color:var(--green-dark);
+    }
+
+    .hero p{
+      color:var(--muted);
+      font-size:18px;
+      margin-bottom:24px;
+      max-width:580px;
+    }
+
+    /* SECTIONS */
+
+    section{
+      padding:90px 0;
+    }
+
+    .section-title{
+      font-family:'Playfair Display',serif;
+      font-size:44px;
+      margin-bottom:18px;
+      color:var(--green-dark);
+    }
+
+    .section-sub{
+      color:var(--muted);
+      max-width:760px;
+      margin-bottom:50px;
+      font-size:17px;
+    }
+
+    /* STORY */
+
+    .story-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .story-content p{
+      margin-bottom:22px;
+      color:var(--muted);
+      font-size:16px;
+    }
+
+    /* VALUES */
+
+    .values{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+      margin-top:40px;
+    }
+
+    .value-card{
+      background:white;
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:34px;
+    }
+
+    .value-card h3{
+      margin-bottom:14px;
+      color:var(--green-dark);
+      font-size:22px;
+    }
+
+    .value-card p{
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    /* TIMELINE */
+
+    .timeline{
+      border-left:2px solid var(--green);
+      padding-left:30px;
+      margin-top:40px;
+      display:flex;
+      flex-direction:column;
+      gap:34px;
+    }
+
+    .timeline-item{
+      position:relative;
+    }
+
+    .timeline-item::before{
+      content:'';
+      width:16px;
+      height:16px;
+      background:var(--green-dark);
+      border-radius:50%;
+      position:absolute;
+      left:-39px;
+      top:6px;
+    }
+
+    .timeline-item h4{
+      font-size:22px;
+      margin-bottom:8px;
+      color:var(--green-dark);
+    }
+
+    .timeline-item p{
+      color:var(--muted);
+    }
+
+    /* TEAM */
+
+    .team-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+      margin-top:50px;
+    }
+
+    .team-card{
+      background:white;
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid var(--border);
+    }
+
+    .team-card img{
+      height:320px;
+      object-fit:cover;
+      border-radius:0;
+    }
+
+    .team-content{
+      padding:28px;
+    }
+
+    .team-content h3{
+      font-size:24px;
+      margin-bottom:6px;
+      color:var(--green-dark);
+    }
+
+    .role{
+      color:var(--green);
+      font-weight:600;
+      margin-bottom:16px;
+      font-size:14px;
+    }
+
+    .team-content p{
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    /* QUOTE */
+
+    .quote{
+      background:var(--green-dark);
+      border-radius:30px;
+      padding:90px 60px;
+      text-align:center;
+      color:white;
+    }
+
+    .quote h2{
+      font-family:'Playfair Display',serif;
+      font-size:54px;
+      line-height:1.2;
+      margin-bottom:20px;
+    }
+
+    .quote p{
+      max-width:760px;
+      margin:auto;
+      color:rgba(255,255,255,.75);
+      font-size:18px;
+    }
+
+    /* CTA */
+
+    .cta{
+      text-align:center;
+    }
+
+    .cta p{
+      max-width:700px;
+      margin:20px auto 34px;
+      color:var(--muted);
+      font-size:17px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:var(--green-dark);
+      color:white;
+      padding:15px 28px;
+      border-radius:12px;
+      font-weight:600;
+      font-size:15px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      padding:40px 0;
+      border-top:1px solid var(--border);
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+      margin-top:70px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:900px){
+
+      h1{
+        font-size:46px;
+      }
+
+      .hero-grid,
+      .story-grid,
+      .values,
+      .team-grid{
+        grid-template-columns:1fr;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .quote{
+        padding:60px 30px;
+      }
+
+      .quote h2{
+        font-size:38px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+
+  <nav>
+    <div class="container nav-wrap">
+      <div class="brand-nav">
+        <div class="logo">
+          <img src="photo%20rip/logo-banner.png" alt="Home Harvest Network Logo">
+        </div>
+        <div class="brand-text">
+          <h1 class="brand-title">
+            <span>Home</span>
+            <span>Harvest</span>
+            <span>Network</span>
+          </h1>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="Homepage.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="subscriptions.html">Subscriptions</a>
+        <a href="for-growers.html">For Growers</a>
+        <a href="for-business.html">For Business</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <a href="#" class="nav-btn">Join Waitlist</a>
+
+    </div>
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <div class="eyebrow">
+          About Home Harvest Network
+        </div>
+
+        <h1>
+          Building a stronger local food system from the ground up.
+        </h1>
+
+        <p>
+          Home Harvest Network was created to connect household growers with structured markets while helping communities generate sustainable income from underutilised spaces.
+        </p>
+
+        <p>
+          We believe local food systems should be more accessible, more transparent, and more empowering for the people who produce the food we eat.
+        </p>
+
+      </div>
+
+      <div>
+        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1400&auto=format&fit=crop" alt="Local agriculture">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STORY -->
+
+  <section style="background:white;">
+
+    <div class="container story-grid">
+
+      <div>
+        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1400&auto=format&fit=crop" alt="Community farming">
+      </div>
+
+      <div class="story-content">
+
+        <h2 class="section-title">
+          Why we started
+        </h2>
+
+        <p>
+          Across South Africa, thousands of households already grow food informally, yet most have no reliable access to structured markets or consistent buyers.
+        </p>
+
+        <p>
+          At the same time, restaurants, schools, grocers, and households are increasingly searching for fresh, locally sourced produce with transparent origins.
+        </p>
+
+        <p>
+          Home Harvest Network was built to bridge that gap — coordinating growers, organising harvests, and creating a reliable supply network that benefits both producers and buyers.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- VALUES -->
+
+  <section>
+
+    <div class="container">
+
+      <h2 class="section-title">
+        What we believe
+      </h2>
+
+      <p class="section-sub">
+        Our approach is grounded in community, transparency, and practical systems that create long-term value for growers and buyers alike.
+      </p>
+
+      <div class="values">
+
+        <div class="value-card">
+          <h3>Local first</h3>
+
+          <p>
+            We believe stronger communities begin with stronger local food systems and local economic participation.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <h3>Transparent supply</h3>
+
+          <p>
+            We aim to create a traceable supply chain where buyers know where produce comes from and growers are fairly recognised.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <h3>Shared growth</h3>
+
+          <p>
+            Home Harvest Network is designed to create sustainable opportunities for both household growers and commercial buyers through coordinated supply.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- JOURNEY -->
+
+  <section style="background:white;">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Our vision
+      </h2>
+
+      <p class="section-sub">
+        We are building a scalable, community-driven agricultural network that starts in KwaZulu-Natal and grows through structured local partnerships.
+      </p>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <h4>Starting locally</h4>
+
+          <p>
+            Home Harvest Network is launching in KwaZulu-Natal by building partnerships with local growers, households, and small businesses.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>Creating structured supply</h4>
+
+          <p>
+            We coordinate growers into organised supply clusters capable of serving both subscription households and commercial buyers.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>Expanding opportunities</h4>
+
+          <p>
+            Over time, Home Harvest Network aims to support more growers, more delivery zones, and stronger local economic participation across South Africa.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TEAM -->
+
+  <section>
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Meet the team
+      </h2>
+
+      <p class="section-sub">
+        Home Harvest Network is driven by people passionate about agriculture, community development, and building sustainable systems for local food supply.
+      </p>
+
+      <div class="team-grid">
+
+        <div class="team-card">
+
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop" alt="Founder">
+
+          <div class="team-content">
+
+            <h3>Njabulo Ndlovu</h3>
+
+            <div class="role">
+              Founder & CEO
+            </div>
+
+            <p>
+              Focused on building scalable systems that connect local growers to structured markets while creating long-term economic opportunities.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="team-card">
+
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop" alt="Co-Founder">
+
+          <div class="team-content">
+
+            <h3>Nontuthuko Zulu</h3>
+
+            <div class="role">
+              Co-Founder
+            </div>
+
+            <p>
+              Supporting operational development, community coordination, and grower engagement within the Home Harvest Network.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="team-card">
+
+          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop" alt="Agricultural Manager">
+
+          <div class="team-content">
+
+            <h3>Khanya Mamba</h3>
+
+            <div class="role">
+              Agricultural Manager
+            </div>
+
+            <p>
+              Assisting with crop planning, grower support, and agricultural coordination across the Home Harvest Network supply network.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- QUOTE -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="quote">
+
+        <h2>
+          “Feeding cities.<br>
+          Empowering homes.”
+        </h2>
+
+        <p>
+          Home Harvest Network exists to help transform underutilised household growing spaces into connected, income-generating parts of a stronger local food economy.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section>
+
+    <div class="container cta">
+
+      <h2 class="section-title">
+        Be part of the journey
+      </h2>
+
+      <p>
+        Whether you are a grower, household subscriber, restaurant, or community partner, Home Harvest Network is building a network designed around local participation and sustainable growth.
+      </p>
+
+      <a href="#" class="btn">
+        Join the Waitlist
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container">
+      © 2026 Home Harvest Network · KwaZulu-Natal, South Africa
+    </div>
+  </footer>
+
+</body>
+</html>

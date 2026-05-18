@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Business | Home Harvest Network</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body{font-family:'Inter',sans-serif;background:#f7f3eb;color:#172019;margin:0;padding:0;}
+    .container{width:min(1150px,90%);margin:auto;padding:40px 0;}
+    nav{background:rgba(247,243,235,.95);backdrop-filter:blur(12px);border-bottom:1px solid #ddd7ca;position:sticky;top:0;z-index:100;padding:12px 0;}
+    .nav-wrap{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:nowrap;}
+    .brand-nav{display:flex;align-items:center;gap:18px;flex-wrap:nowrap;max-width:420px}
+    .brand-text{display:flex;align-items:center}
+    .logo img{height:110px;width:auto;display:block}
+    .brand-title{font-family:'Playfair Display',serif;font-size:clamp(24px,2.6vw,34px);line-height:1.05;letter-spacing:-.03em;text-transform:uppercase;margin:0;color:#2f4934}
+    .brand-title span{display:block}
+    .brand-title span:nth-child(2){margin-left:0.9rem}
+    .brand-title span:nth-child(3){margin-left:1.8rem}
+    .nav-links{display:flex;gap:28px;font-size:15px;color:#677168;align-items:center}
+    .nav-links a{color:inherit;text-decoration:none}
+    .nav-links a:hover{color:#2f4934}
+    .nav-btn{background:#2f4934;color:white;padding:12px 20px;border-radius:10px;font-size:14px;font-weight:600;white-space:nowrap}
+    h1{font-family:'Playfair Display',serif;font-size:42px;margin:32px 0 16px;color:#2f4934;}
+    h2{font-family:'Playfair Display',serif;font-size:32px;color:#2f4934;margin-top:48px;margin-bottom:18px;}
+    p{max-width:720px;line-height:1.7;color:#677168;}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center;padding:60px 0;}
+    .hero img{width:100%;border-radius:20px;box-shadow:0 18px 40px rgba(0,0,0,.08);}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px;}
+    .feature{background:white;padding:28px;border-radius:20px;border:1px solid #ddd7ca;box-shadow:0 10px 30px rgba(0,0,0,.05);}
+    .feature h3{font-size:22px;margin-bottom:12px;color:#2f4934;}
+    .feature p{color:#677168;}
+    .contact-card{background:white;padding:28px;border-radius:20px;border:1px solid #ddd7ca;box-shadow:0 10px 30px rgba(0,0,0,.05);margin-top:30px;}
+    .contact-card h3{font-size:22px;margin-bottom:16px;color:#2f4934;}
+    .contact-card p{color:#677168;line-height:1.7;}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-wrap">
+      <div class="brand-nav">
+        <div class="logo">
+          <img src="photo%20rip/logo-banner.png" alt="Home Harvest Network Logo">
+        </div>
+        <div class="brand-text">
+          <h1 class="brand-title">
+            <span>Home</span>
+            <span>Harvest</span>
+            <span>Network</span>
+          </h1>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="Homepage.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="subscriptions.html">Subscriptions</a>
+        <a href="for-growers.html">For Growers</a>
+        <a href="for-business.html">For Business</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <a href="#" class="nav-btn">Join Waitlist</a>
+    </div>
+  </nav>
+  <div class="container">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Business sourcing</span>
+        <h1>Partner with local growers for fresh supply</h1>
+        <p>Build a reliable supply chain with fresh produce sourced from household growers in KwaZulu-Natal. This page helps businesses discover how to work with our network.</p>
+      </div>
+      <img src="photo%20rip/business.jpeg" alt="Business supply" style="width:100%;border-radius:20px;box-shadow:0 18px 40px rgba(0,0,0,.08);" />
+    </section>
+
+    <section>
+      <h2>Business solutions</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>Quality sourcing</h3>
+          <p>Access fresh produce grown close to your operations, reducing travel time and improving shelf life.</p>
+        </div>
+        <div class="feature">
+          <h3>Flexible orders</h3>
+          <p>Choose the delivery frequency and product mix that best fits your business needs.</p>
+        </div>
+        <div class="feature">
+          <h3>Local partnerships</h3>
+          <p>Support local households and small-scale growers while keeping supply chains transparent.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- B2B section (excerpt from index) -->
+    <section style="background:#f7f0e6;padding:28px;border-radius:12px;margin-top:22px;">
+      <div style="max-width:1150px;margin:0 auto;">
+        <span style="display:block;color:#5FC55E;font-weight:700;margin-bottom:8px;">For Commercial Buyers</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:28px;color:#2f4934;margin-bottom:8px;">Reliable supply.<br><em>Local provenance.</em></h2>
+        <p style="color:#677168;max-width:760px;margin-bottom:16px;">Weekly deliveries of fresh, locally grown vegetables to restaurants, grocers, and corporate canteens across KZN. Standing orders, PO generation, and SLA dashboards included.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+          <div style="background:white;padding:18px;border-radius:12px;border:1px solid #eee;">
+            <div style="font-size:22px;margin-bottom:8px;">🍽️</div>
+            <h3 style="margin:0 0 8px;color:#2f4934;">Restaurants & Cafés</h3>
+            <p style="color:#677168;margin:0 0 8px;">Premium leafy greens and mixed vegetables on a weekly schedule. Tell your guests exactly which neighbourhood grew their food.</p>
+            <div><span style="display:inline-block;padding:6px 10px;border-radius:100px;background:#eaf3de;color:#5FC55E;font-weight:700;font-size:12px;">From R25/kg</span></div>
+          </div>
+          <div style="background:white;padding:18px;border-radius:12px;border:1px solid #eee;">
+            <div style="font-size:22px;margin-bottom:8px;">🏪</div>
+            <h3 style="margin:0 0 8px;color:#2f4934;">Independent Grocers</h3>
+            <p style="color:#677168;margin:0 0 8px;">Reliable weekly stock of fast-moving vegetables with consistent spec and weight. Flexible volumes, transparent pricing, 30-day invoicing.</p>
+            <div><span style="display:inline-block;padding:6px 10px;border-radius:100px;background:#eaf3de;color:#5FC55E;font-weight:700;font-size:12px;">Weekly subscription</span></div>
+          </div>
+          <div style="background:white;padding:18px;border-radius:12px;border:1px solid #eee;">
+            <div style="font-size:22px;margin-bottom:8px;">🏢</div>
+            <h3 style="margin:0 0 8px;color:#2f4934;">Corporate Canteens</h3>
+            <p style="color:#677168;margin:0 0 8px;">High-volume standing orders with monthly invoicing, SLA dashboards, and a compelling sustainability narrative for your ESG reporting.</p>
+            <div><span style="display:inline-block;padding:6px 10px;border-radius:100px;background:#eaf3de;color:#5FC55E;font-weight:700;font-size:12px;">Volume pricing</span></div>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;">
+          <div>
+            <h3 style="margin-top:0;color:#2f4934;">Get your free supply proposal.</h3>
+            <p style="color:#677168;">Fill in your details. Our commercial team will send you a tailored weekly supply proposal within 48 hours — including pricing tiers, MOQs, and spec sheets. First sample delivery on us.</p>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px;color:#677168;font-size:13px;">
+              <div>✓ PO and invoice auto-generation</div>
+              <div>✓ Standing orders with substitution policy</div>
+              <div>✓ Delivery window selection</div>
+              <div>✓ Quality SLA dashboard access</div>
+            </div>
+          </div>
+          <div style="background:white;padding:14px;border-radius:10px;border:1px solid #eee;">
+            <input type="text" placeholder="Business name" style="width:100%;padding:10px;margin-bottom:8px;border:1px solid #ddd;border-radius:8px;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;"><input type="text" placeholder="Contact name" style="padding:10px;border:1px solid #ddd;border-radius:8px;"><input type="tel" placeholder="Phone" style="padding:10px;border:1px solid #ddd;border-radius:8px;"></div>
+            <input type="email" placeholder="Email address" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;margin-bottom:8px;">
+            <select style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;margin-bottom:8px;"><option>Business type</option><option>Restaurant / Café</option><option>Independent Grocer</option><option>Corporate Canteen</option></select>
+            <button style="background:#5FC55E;border:none;padding:10px 14px;border-radius:8px;font-weight:700;">Send Me a Supply Proposal →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-card">
+      <h3>Start a business partnership</h3>
+      <p>If your business is interested in local sourcing, submit a request through the contact page and we’ll help match your needs with available growers and delivery options.</p>
+    </section>
+  </div>
+</body>
+</html>

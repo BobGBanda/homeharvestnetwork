@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Home Harvest Network</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body{font-family:'Inter',sans-serif;background:#f7f3eb;color:#172019;margin:0;padding:0;}
+    .container{width:min(1150px,90%);margin:auto;padding:40px 0;}
+    nav{background:rgba(247,243,235,.95);backdrop-filter:blur(12px);border-bottom:1px solid #ddd7ca;position:sticky;top:0;z-index:100;padding:12px 0;}
+    .nav-wrap{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:nowrap;}
+    .brand-nav{display:flex;align-items:center;gap:18px;flex-wrap:nowrap;max-width:420px;}
+    .brand-text{display:flex;align-items:center;}
+    .logo img{height:110px;width:auto;display:block;}
+    .brand-title{font-family:'Playfair Display',serif;font-size:clamp(24px,2.6vw,34px);line-height:1.05;letter-spacing:-.03em;text-transform:uppercase;margin:0;color:#2f4934;}
+    .brand-title span{display:block}
+    .brand-title span:nth-child(2){margin-left:0.9rem}
+    .brand-title span:nth-child(3){margin-left:1.8rem}
+    .nav-links{display:flex;gap:28px;font-size:15px;color:#677168;align-items:center}
+    .nav-links a{color:inherit;text-decoration:none}
+    .nav-links a:hover{color:#2f4934}
+    .nav-btn{background:#2f4934;color:white;padding:12px 20px;border-radius:10px;font-size:14px;font-weight:600;white-space:nowrap}
+    h1{font-family:'Playfair Display',serif;font-size:42px;margin:32px 0 16px;color:#2f4934;}
+    h2{font-family:'Playfair Display',serif;font-size:32px;color:#2f4934;margin-top:48px;margin-bottom:18px;}
+    p{max-width:720px;line-height:1.7;color:#677168;}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;margin-top:24px;}
+    .contact-card{background:white;padding:28px;border-radius:20px;border:1px solid #ddd7ca;box-shadow:0 10px 30px rgba(0,0,0,.05);}
+    .contact-card h3{font-size:22px;margin-bottom:14px;color:#2f4934;}
+    .contact-card p{color:#677168;font-size:15px;line-height:1.8;}
+    .contact-form{display:grid;gap:18px;}
+    .contact-form input,.contact-form textarea{width:100%;padding:14px 16px;border:1px solid #ddd7ca;border-radius:14px;font-family:'Inter',sans-serif;font-size:15px;}
+    .contact-form button{width:fit-content;background:#5d8c51;color:white;padding:12px 20px;border:none;border-radius:14px;font-weight:700;cursor:pointer;}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-wrap">
+      <div class="brand-nav">
+        <div class="logo">
+          <img src="photo%20rip/logo-banner.png" alt="Home Harvest Network Logo">
+        </div>
+        <div class="brand-text">
+          <h1 class="brand-title">
+            <span>Home</span>
+            <span>Harvest</span>
+            <span>Network</span>
+          </h1>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="Homepage.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="subscriptions.html">Subscriptions</a>
+        <a href="for-growers.html">For Growers</a>
+        <a href="for-business.html">For Business</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <a href="#" class="nav-btn">Join Waitlist</a>
+    </div>
+  </nav>
+  <div class="container">
+    <h1>Contact</h1>
+    <p>Have a question about subscriptions, grower partnerships, or business sourcing? Use the form below and we’ll respond as soon as possible.</p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Reach out</h3>
+        <p>Please send your enquiry through this page if you want to learn more about local supply, subscription boxes, or business partnerships with Home Harvest Network.</p>
+        <p>Based in KwaZulu-Natal, South Africa.</p>
+      </div>
+      <form class="contact-form">
+        <input type="text" placeholder="Your name" />
+        <input type="email" placeholder="Your email" />
+        <input type="text" placeholder="Subject" />
+        <textarea rows="6" placeholder="Message"></textarea>
+        <button type="submit">Send message</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
