@@ -185,12 +185,20 @@
     }
 
     .eyebrow{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
       text-transform:uppercase;
       letter-spacing:2px;
-      font-size:12px;
+      font-size:45px;
       color:var(--green);
-      margin-bottom:18px;
       font-weight:700;
+      line-height:0.95;
+      margin-bottom:24px;
+    }
+    
+    .eyebrow span:last-child{
+      margin-left:60px;
     }
 
     .hero p{
@@ -639,7 +647,8 @@
       <div>
 
         <div class="eyebrow">
-          Feeding cities, empowering homes
+          <span>Feeding cities,</span>
+          <span>empowering homes</span>
         </div>
 
         <p>
