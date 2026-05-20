@@ -1,46 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>For Growers | Home Harvest Network</title>
 
+  <link rel="icon" type="image/png" href="photo%20rip/logo-banner.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --green: #5d8c51;
+      --green-dark: #2f4934;
+      --cream: #f7f3eb;
+      --sand: #ece4d6;
+      --text: #172019;
+      --muted: #667063;
+      --white: #ffffff;
+      --border: #ddd7ca;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #f7f3eb;
-      color: #172019;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
     .container {
       width: min(1150px, 90%);
       margin: auto;
-      padding: 40px 0;
     }
 
-    /* ── NAV ── */
+    /* NAV */
+
     nav {
-      background: rgba(247,243,235,.95);
+      background: rgba(247, 243, 235, .95);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid #ddd7ca;
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
-      padding: 12px 0;
     }
+
     .nav-wrap {
-      min-height: 72px;
+      min-height: 60px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 30px;
-      flex-wrap: nowrap;
+      padding: 10px 0;
     }
+
     .brand-nav {
       display: flex;
       align-items: center;
@@ -48,78 +78,110 @@
       flex-wrap: nowrap;
       max-width: 420px;
     }
-    .logo img { height: 110px; width: auto; display: block; }
+
+    .brand-text {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 100px;
+      width: auto;
+      display: block;
+    }
+
     .brand-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(24px, 2.6vw, 34px);
+      font-size: clamp(15px, 2.6vw, 25px);
       line-height: 1.05;
       letter-spacing: -.03em;
       text-transform: uppercase;
       margin: 0;
-      color: #2f4934;
+      color: var(--green-dark);
     }
-    .brand-title span { display: block; }
-    .brand-title span:nth-child(2) { margin-left: 0.9rem; }
-    .brand-title span:nth-child(3) { margin-left: 1.8rem; }
+
+    .brand-title span {
+      display: block;
+    }
+
+    .brand-title span:nth-child(2) {
+      margin-left: 1.1rem;
+    }
+
+    .brand-title span:nth-child(3) {
+      margin-left: 2.2rem;
+    }
+
     .nav-links {
       display: flex;
       gap: 28px;
       font-size: 15px;
-      color: #677168;
+      color: var(--muted);
       align-items: center;
     }
-    .nav-links a { color: inherit; text-decoration: none; }
-    .nav-links a:hover { color: #2f4934; }
+
+    .nav-links a:hover {
+      color: var(--green-dark);
+    }
+
     .nav-btn {
-      background: #2f4934;
+      background: var(--green-dark);
       color: white;
       padding: 12px 20px;
       border-radius: 10px;
       font-size: 14px;
       font-weight: 600;
       white-space: nowrap;
-      text-decoration: none;
     }
 
-    /* ── PAGE BODY ── */
-    .page-body { padding: 40px 0 60px; }
+    /* PAGE BODY */
 
-    /* ── HERO ── */
+    .page-body {
+      padding: 0 0 60px;
+    }
+
+    /* HERO */
+
     .hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 32px;
       align-items: center;
-      margin-bottom: 36px;
+      padding: 70px 0 80px;
     }
+
     .hero-text h1 {
       font-family: 'Playfair Display', serif;
       font-size: 42px;
-      color: #2f4934;
+      color: var(--green-dark);
       line-height: 1.15;
       margin-bottom: 14px;
     }
+
     .hero-text p {
-      color: #677168;
+      color: var(--muted);
       font-size: 16px;
       line-height: 1.7;
       max-width: 400px;
     }
+
     .hero-img {
       width: 100%;
       height: 240px;
       object-fit: cover;
       border-radius: 18px;
-      box-shadow: 0 18px 40px rgba(0,0,0,.08);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .08);
       display: block;
     }
 
-    /* ── PARTNER SECTION ── */
+    /* PARTNER SECTION */
+
     .partner-section {
       background: #f0f0ee;
       border-radius: 16px;
       padding: 32px;
     }
+
     .eyebrow {
       display: block;
       color: #5FC55E;
@@ -129,27 +191,31 @@
       letter-spacing: .06em;
       margin-bottom: 10px;
     }
+
     .partner-section h2 {
       font-family: 'Playfair Display', serif;
       font-size: 26px;
-      color: #2f4934;
+      color: var(--green-dark);
       margin-bottom: 8px;
       line-height: 1.3;
     }
+
     .partner-section > p {
-      color: #677168;
+      color: var(--muted);
       font-size: 15px;
       line-height: 1.7;
       margin-bottom: 22px;
     }
 
-    /* ── BENEFIT CARDS ── */
+    /* BENEFIT CARDS */
+
     .benefit-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 14px;
       margin-bottom: 22px;
     }
+
     .benefit {
       background: white;
       padding: 18px;
@@ -159,6 +225,7 @@
       flex-direction: column;
       gap: 10px;
     }
+
     .benefit-icon {
       width: 40px;
       height: 40px;
@@ -169,23 +236,26 @@
       justify-content: center;
       font-size: 20px;
     }
+
     .benefit strong {
       font-size: 14px;
       font-weight: 600;
       color: #111;
       display: block;
     }
+
     .benefit p {
-      color: #677168;
+      color: var(--muted);
       font-size: 13px;
       line-height: 1.6;
       max-width: none;
     }
 
-    /* ── CTA ── */
+    /* CTA */
+
     .cta-box {
       background: #eaf3de;
-      border: 1px solid rgba(95,197,94,.3);
+      border: 1px solid rgba(95, 197, 94, .3);
       padding: 18px 20px;
       border-radius: 12px;
       display: flex;
@@ -194,16 +264,19 @@
       gap: 20px;
       flex-wrap: wrap;
     }
+
     .cta-box p {
       font-size: 15px;
       color: #111;
       max-width: none;
     }
+
     .cta-inputs {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
     }
+
     .cta-inputs input {
       padding: 10px 14px;
       border: 1px solid #ddd;
@@ -212,6 +285,7 @@
       min-width: 180px;
       font-family: 'Inter', sans-serif;
     }
+
     .cta-inputs button {
       background: #5FC55E;
       color: white;
@@ -224,13 +298,19 @@
       cursor: pointer;
       white-space: nowrap;
     }
-    .cta-inputs button:hover { background: #4db34c; }
 
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid #ddd7ca;
-      padding: 24px 0;
+    .cta-inputs button:hover {
+      background: #4db34c;
     }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 8px 0;
+      background: var(--cream);
+    }
+
     .footer-wrap {
       display: flex;
       align-items: center;
@@ -238,13 +318,38 @@
       gap: 20px;
       flex-wrap: wrap;
     }
-      .footer-logo img{
-      height:300px;
-      width:auto;
-      display:block;
-      border-radius:0;
+
+    .footer-logo img {
+      height: 300px;
+      width: auto;
+      display: block;
+      border-radius: 0;
     }
-    .footer-right { color: #677168; font-size: 14px; }
+
+    .footer-right {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      .hero,
+      .benefit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-text h1 {
+        font-size: 36px;
+      }
+
+    }
+
   </style>
 </head>
 <body>
@@ -255,7 +360,7 @@
         <div class="logo">
           <img src="photo%20rip/logo-banner.png" alt="Home Harvest Network Logo">
         </div>
-        <div>
+        <div class="brand-text">
           <h1 class="brand-title">
             <span>Home</span>
             <span>Harvest</span>
@@ -273,7 +378,9 @@
         <a href="contact.html">Contact</a>
       </div>
 
-      <a href="#" class="nav-btn">Join Waitlist</a>
+      <a href="#" class="nav-btn">
+        Join Waitlist
+      </a>
     </div>
   </nav>
 
@@ -282,52 +389,85 @@
     <!-- HERO -->
     <div class="hero">
       <div class="hero-text">
-        <h1>Grow with us.</h1>
-        <p>Home Harvest Network helps local growers access structured markets — without managing logistics, packaging, or finding buyers themselves.</p>
+        <h1>
+          Grow with us.
+        </h1>
+
+        <p>
+          Home Harvest Network helps local growers access structured markets — without managing logistics, packaging, or finding buyers themselves.
+        </p>
       </div>
+
       <img src="photo%20rip/join-cropped.png" alt="Join as a grower" class="hero-img">
     </div>
 
     <!-- PARTNER BENEFITS -->
     <div class="partner-section">
       <span class="eyebrow">For Farmer Partners</span>
-      <h2>Your yard. Our work. <em>Your income.</em></h2>
-      <p>Apply once, and we handle everything from soil preparation to sale.</p>
+
+      <h2>
+        Your yard. Our work. <em>Your income.</em>
+      </h2>
+
+      <p>
+        Apply once, and we handle everything from soil preparation to sale.
+      </p>
 
       <div class="benefit-grid">
         <div class="benefit">
           <div class="benefit-icon">💵</div>
+
           <strong>Earn R1,500+ per harvest</strong>
-          <p>Flat fee + revenue share + water reimbursement. Transparent statements and mobile payouts.</p>
+
+          <p>
+            Flat fee + revenue share + water reimbursement. Transparent statements and mobile payouts.
+          </p>
         </div>
+
         <div class="benefit">
           <div class="benefit-icon">📋</div>
+
           <strong>Simple task board &amp; crop plan</strong>
-          <p>Planting schedules, harvest dates, agronomy tips, and quality feedback in real time.</p>
+
+          <p>
+            Planting schedules, harvest dates, agronomy tips, and quality feedback in real time.
+          </p>
         </div>
+
         <div class="benefit">
           <div class="benefit-icon">🔒</div>
+
           <strong>Fully insured &amp; vetted managers</strong>
-          <p>All plot managers are background-checked, trained, and covered under public liability insurance.</p>
+
+          <p>
+            All plot managers are background-checked, trained, and covered under public liability insurance.
+          </p>
         </div>
       </div>
 
       <div class="cta-box">
-        <p>Ready to earn from your backyard? We'll call you within 24 hours.</p>
+        <p>
+          Ready to earn from your backyard? We'll call you within 24 hours.
+        </p>
+
         <div class="cta-inputs">
           <input type="tel" placeholder="Your phone number">
-          <button type="button">Call Me Back →</button>
+
+          <button type="button">
+            Call Me Back →
+          </button>
         </div>
       </div>
     </div>
   </div>
+
   <!-- FOOTER -->
   <footer>
     <div class="container footer-wrap">
       <div class="footer-logo">
         <img src="photo%20rip/logo-bottom.png" alt="Home Harvest Network Logo">
       </div>
-      
+
       <div class="footer-right">
         © 2026 Home Harvest Network · KwaZulu-Natal, South Africa
       </div>
