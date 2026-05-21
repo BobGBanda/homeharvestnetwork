@@ -297,13 +297,20 @@
     }
 
     .form-inputs input,
-    .form-inputs select {
+    .form-inputs select,
+    .form-inputs textarea {
       width: 100%;
       padding: 10px;
       margin-bottom: 8px;
       border: 1px solid #ddd;
       border-radius: 8px;
       font-size: 14px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .form-inputs textarea {
+      min-height: 104px;
+      resize: vertical;
     }
 
     .form-inputs button {
@@ -382,6 +389,7 @@
     }
 
   </style>
+  <link rel="stylesheet" href="css/mobile-nav.css">
 </head>
 <body>
 
@@ -543,15 +551,19 @@
           <input name="business_name" type="text" placeholder="Business name" required>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
             <input name="name" type="text" placeholder="Contact name" required>
-            <input name="phone" type="tel" placeholder="Phone">
+            <input name="phone" type="tel" placeholder="Phone" required>
           </div>
           <input name="email" type="email" placeholder="Email address" required>
+          <input name="suburb" type="text" placeholder="Delivery suburb / area" required>
           <select name="business_type" required>
             <option value="">Business type</option>
             <option>Restaurant / Café</option>
             <option>Independent Grocer</option>
             <option>Corporate Canteen</option>
+            <option>School / Hospitality</option>
+            <option>Other</option>
           </select>
+          <textarea name="message" rows="4" placeholder="Tell us what you need: produce items, approximate weekly quantities, delivery frequency, preferred delivery days, and any quality specs" required></textarea>
           <button type="submit">
             Send Me a Supply Proposal →
           </button>
@@ -586,6 +598,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/supabase-config.js"></script>
+  <script src="js/mobile-nav.js"></script>
   <script src="js/leads.js"></script>
 </body>
 </html>

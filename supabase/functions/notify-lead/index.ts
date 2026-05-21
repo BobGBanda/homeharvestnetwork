@@ -54,8 +54,8 @@ function getTextBody(lead: Lead) {
     `Email: ${lead.email || '-'}`,
     `Phone: ${lead.phone || '-'}`,
     `Suburb: ${lead.suburb || '-'}`,
-    `Subject: ${lead.subject || '-'}`,
-    `Message: ${lead.message || '-'}`,
+    `Subject / chosen box: ${lead.subject || '-'}`,
+    `Message / details: ${lead.message || '-'}`,
     `Source page: ${lead.source_page || '-'}`,
     `Created at: ${lead.created_at || '-'}`
   ].join('\n');
@@ -70,8 +70,8 @@ function getHtmlBody(lead: Lead) {
     ['Email', lead.email],
     ['Phone', lead.phone],
     ['Suburb', lead.suburb],
-    ['Subject', lead.subject],
-    ['Message', lead.message],
+    ['Subject / chosen box', lead.subject],
+    ['Message / details', lead.message],
     ['Source page', lead.source_page],
     ['Created at', lead.created_at]
   ];
