@@ -619,7 +619,7 @@
         <a href="contact.html">Contact</a>
       </div>
 
-      <a href="#" class="nav-btn">
+      <a href="#waitlist" class="nav-btn">
         Join Waitlist
       </a>
     </div>
@@ -644,11 +644,11 @@
 
         <div class="hero-buttons">
 
-          <a href="#" class="btn btn-primary">
+          <a href="#waitlist" class="btn btn-primary">
             Join the Waitlist
           </a>
 
-          <a href="#" class="btn btn-secondary">
+          <a href="for-growers.html" class="btn btn-secondary">
             Become a Grower
           </a>
 
@@ -776,7 +776,7 @@
               <li>Weekly or bi-weekly delivery</li>
             </ul>
 
-            <a href="#" class="btn btn-primary">
+            <a href="#waitlist" class="btn btn-primary">
               Join Waitlist
             </a>
 
@@ -807,7 +807,7 @@
               <li>Flexible delivery schedule</li>
             </ul>
 
-            <a href="#" class="btn btn-primary">
+            <a href="#waitlist" class="btn btn-primary">
               Join Waitlist
             </a>
 
@@ -838,7 +838,7 @@
               <li>Best for larger households</li>
             </ul>
 
-            <a href="#" class="btn btn-primary">
+            <a href="#waitlist" class="btn btn-primary">
               Join Waitlist
             </a>
 
@@ -930,7 +930,7 @@
           We coordinate crop planning, collection, quality control, and distribution while growers focus on producing high-quality crops.
         </p>
 
-        <a href="#" class="btn btn-primary">
+        <a href="for-growers.html" class="btn btn-primary">
           Become a Grower
         </a>
 
@@ -978,7 +978,7 @@
           We manage standing orders, QC, delivery scheduling and full traceability so your business always has fresh, neighbourhood-grown produce.
         </p>
 
-        <a href="#" class="btn btn-primary">
+        <a href="for-business.html" class="btn btn-primary">
           Partner With Us
         </a>
 
@@ -990,7 +990,7 @@
 
   <!-- CTA -->
 
-  <section class="cta-section">
+  <section class="cta-section" id="waitlist">
     <div class="container">
 
       <h2>
@@ -1001,12 +1001,12 @@
         Subscribe to a weekly box, become a grower, or supply your business. Home Harvest Network is transforming how fresh food reaches KwaZulu-Natal households.
       </p>
 
-      <div class="cta-form">
-        <input type="email" placeholder="Your email address"/>
-        <button>
+      <form class="cta-form" data-lead-form data-lead-type="waitlist" data-source-page="index.html">
+        <input name="email" type="email" placeholder="Your email address" required />
+        <button type="submit">
           Get Started
         </button>
-      </div>
+      </form>
 
     </div>
   </section>
@@ -1026,6 +1026,9 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/leads.js"></script>
 </body>
 
 </html>

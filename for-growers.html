@@ -306,17 +306,18 @@
     /* FOOTER */
 
     footer {
-      border-top: 1px solid var(--border);
       padding: 8px 0;
+      border-top: 1px solid var(--border);
       background: var(--cream);
     }
 
     .footer-wrap {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px;
+      text-align: center;
     }
 
     .footer-logo img {
@@ -378,7 +379,7 @@
         <a href="contact.html">Contact</a>
       </div>
 
-      <a href="#" class="nav-btn">
+      <a href="index.html#waitlist" class="nav-btn">
         Join Waitlist
       </a>
     </div>
@@ -450,29 +451,32 @@
           Ready to earn from your backyard? We'll call you within 24 hours.
         </p>
 
-        <div class="cta-inputs">
-          <input type="tel" placeholder="Your phone number">
+        <form class="cta-inputs" data-lead-form data-lead-type="grower" data-source-page="for-growers.html">
+          <input name="phone" type="tel" placeholder="Your phone number" required>
 
-          <button type="button">
+          <button type="submit">
             Call Me Back →
           </button>
-        </div>
+        </form>
       </div>
     </div>
   </div>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="container footer-wrap">
-      <div class="footer-logo">
-        <img src="photo%20rip/logo-bottom.png" alt="Home Harvest Network Logo">
-      </div>
 
-      <div class="footer-right">
-        © 2026 Home Harvest Network · KwaZulu-Natal, South Africa
+  <footer>
+      <div class="container footer-wrap">
+        <div class="footer-logo">
+          <img src="photo%20rip/logo-bottom.png" alt="Home Harvest Network Logo">
+        </div>
+  
+        <div class="footer-right">
+          © 2026 Home Harvest Network · KwaZulu-Natal, South Africa
       </div>
-    </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/leads.js"></script>
 </body>
 </html>

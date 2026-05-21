@@ -290,7 +290,7 @@
         <a href="contact.html">Contact</a>
       </div>
 
-      <a href="#" class="nav-btn">
+      <a href="index.html#waitlist" class="nav-btn">
         Join Waitlist
       </a>
     </div>
@@ -328,14 +328,14 @@
         </p>
       </div>
 
-      <form class="contact-form">
-        <input type="text" placeholder="Your name" />
+      <form class="contact-form" data-lead-form data-lead-type="contact" data-source-page="contact.html">
+        <input name="name" type="text" placeholder="Your name" required />
 
-        <input type="email" placeholder="Your email" />
+        <input name="email" type="email" placeholder="Your email" required />
 
-        <input type="text" placeholder="Subject" />
+        <input name="subject" type="text" placeholder="Subject" />
 
-        <textarea rows="6" placeholder="Message"></textarea>
+        <textarea name="message" rows="6" placeholder="Message"></textarea>
 
         <button type="submit">
           Send message
@@ -360,5 +360,8 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/leads.js"></script>
 </body>
 </html>

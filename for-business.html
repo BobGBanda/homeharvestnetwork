@@ -409,7 +409,7 @@
         <a href="contact.html">Contact</a>
       </div>
 
-      <a href="#" class="nav-btn">
+      <a href="index.html#waitlist" class="nav-btn">
         Join Waitlist
       </a>
     </div>
@@ -539,23 +539,23 @@
           </div>
         </div>
 
-        <div class="form-inputs">
-          <input type="text" placeholder="Business name">
+        <form class="form-inputs" data-lead-form data-lead-type="business" data-source-page="for-business.html">
+          <input name="business_name" type="text" placeholder="Business name" required>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-            <input type="text" placeholder="Contact name">
-            <input type="tel" placeholder="Phone">
+            <input name="name" type="text" placeholder="Contact name" required>
+            <input name="phone" type="tel" placeholder="Phone">
           </div>
-          <input type="email" placeholder="Email address">
-          <select>
-            <option>Business type</option>
+          <input name="email" type="email" placeholder="Email address" required>
+          <select name="business_type" required>
+            <option value="">Business type</option>
             <option>Restaurant / Café</option>
             <option>Independent Grocer</option>
             <option>Corporate Canteen</option>
           </select>
-          <button>
+          <button type="submit">
             Send Me a Supply Proposal →
           </button>
-        </div>
+        </form>
       </div>
     </section>
 
@@ -584,5 +584,8 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/leads.js"></script>
 </body>
 </html>

@@ -1,0 +1,2 @@
+[functions.notify-lead]
+verify_jwt = false
