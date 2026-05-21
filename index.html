@@ -7,7 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  <link rel="icon" type="image/png" href="photo%20rip/logo-banner.png">
   <style>
 
     *{
@@ -27,28 +27,13 @@
       --border:#ddd7ca;
     }
 
-    body{
-      font-family:'Inter',sans-serif;
-      background:var(--cream);
-      color:var(--text);
-      line-height:1.6;
-    }
+    body{font-family:'Inter',sans-serif; background:var(--cream); color:var(--text); line-height:1.6;}
 
-    img{
-      width:100%;
-      display:block;
-      border-radius:16px;
-    }
+    img{ width:100%; display:block;border-radius:16px;}
 
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
+    a{text-decoration:none; color:inherit;}
 
-    .container{
-      width:min(1150px,90%);
-      margin:auto;
-    }
+    .container{ width:min(1150px,90%); margin:auto;}
 
     /* NAV */
 
@@ -84,14 +69,14 @@
     }
 
     .logo img{
-      height:110px;
+      height:100px;
       width:auto;
       display:block;
     }
 
     .brand-title{
       font-family:'Playfair Display',serif;
-      font-size:clamp(24px,2.6vw,34px);
+      font-size:clamp(15px,2.6vw,25px);
       line-height:1.05;
       letter-spacing:-.03em;
       text-transform:uppercase;
@@ -104,11 +89,11 @@
     }
 
     .brand-title span:nth-child(2){
-      margin-left:0.9rem;
+      margin-left:1.1rem;
     }
 
     .brand-title span:nth-child(3){
-      margin-left:1.8rem;
+      margin-left:2.2rem;
     }
 
     .nav-links{
@@ -136,7 +121,7 @@
     /* HERO */
 
     .hero{
-      padding:90px 0;
+      padding:70px 0 80px;
     }
 
     .hero-grid{
@@ -185,14 +170,17 @@
     }
 
     .eyebrow{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
       text-transform:uppercase;
       letter-spacing:2px;
-      font-size:12px;
+      font-size:45px;
       color:var(--green);
-      margin-bottom:18px;
       font-weight:700;
+      line-height:0.95;
+      margin-bottom:24px;
     }
-
     .hero p{
       font-size:18px;
       color:var(--muted);
@@ -231,32 +219,34 @@
     }
 
     .hero-image{
+      height:400px;
       border-radius:24px;
       overflow:hidden;
       box-shadow:0 20px 50px rgba(0,0,0,.08);
     }
-
+    
     .hero-image img{
-      border-radius:24px;
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
-
     /* SECTIONS */
 
     section{
-      padding:90px 0;
+      padding:50px 0;
     }
 
     .section-title{
       font-family:'Playfair Display',serif;
       font-size:44px;
-      margin-bottom:18px;
+      margin-bottom:8px;
       color:var(--green-dark);
     }
 
     .section-sub{
       color:var(--muted);
       max-width:700px;
-      margin-bottom:50px;
+      margin-bottom:36px;
       font-size:17px;
       line-height:1.8;
     }
@@ -347,7 +337,7 @@
     .split{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:60px;
+      gap:40px;
       align-items:center;
     }
 
@@ -364,7 +354,7 @@
       background:var(--green-dark);
       color:white;
       border-radius:28px;
-      padding:70px;
+      padding:50px;
       text-align:center;
     }
 
@@ -385,7 +375,7 @@
 
     .cta-form{
       display:flex;
-      gap:14px;
+      gap:12px;
       justify-content:center;
       flex-wrap:wrap;
     }
@@ -399,7 +389,7 @@
     }
 
     .cta-form button{
-      padding:15px 24px;
+      padding:12px 20px;
       border:none;
       border-radius:12px;
       background:#88b67c;
@@ -411,7 +401,7 @@
     /* FOOTER */
 
     footer{
-      padding:35px 0;
+      padding:8px 0;
       border-top:1px solid var(--border);
       background:var(--cream);
     }
@@ -421,12 +411,12 @@
       flex-direction:column;
       align-items:center;
       justify-content:center;
-      gap:18px;
+      gap:5px;
       text-align:center;
     }
 
     .footer-logo img{
-      height:200px;
+      height:300px;
       width:auto;
       display:block;
       border-radius:0;
@@ -580,10 +570,15 @@
 
 @media(max-width:900px){
 
+  .hero-grid,
   .stats-strip,
   .product-grid,
   .testimonial-grid{
     grid-template-columns:1fr;
+  }
+
+  .nav-links{
+    display:none;
   }
 
 }
@@ -604,7 +599,7 @@
     <div class="container nav-wrap">
       <a href="index.html" class="brand-nav">
         <div class="logo">
-          <img src="logo-banner.png" alt="Home Harvest Network Logo">
+          <img src="photo%20rip/logo-banner.png" alt="Home Harvest Network Logo">
         </div>
         <div class="brand-text">
           <h1 class="brand-title">
@@ -639,7 +634,8 @@
       <div>
 
         <div class="eyebrow">
-          Feeding cities, empowering homes
+          Feeding cities,<br> 
+          empowering homes
         </div>
 
         <p>
@@ -663,43 +659,13 @@
       <div class="hero-image">
 
         <img 
-          src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1400&auto=format&fit=crop" 
-          alt="Fresh produce"
+          src="photo%20rip/local-sourcing.webp" 
+          alt="Fresh produce- local sourcing"
         >
 
       </div>
 
     </div>
-
-  </section>
-
-  
-<div class="container">
-  <div class="stats-strip">
-
-    <div class="stat-box">
-      <h3>150+</h3>
-      <p>Local households connected</p>
-    </div>
-
-    <div class="stat-box">
-      <h3>30+</h3>
-      <p>Independent growers onboarded</p>
-    </div>
-
-    <div class="stat-box">
-      <h3>12</h3>
-      <p>Weekly delivery zones</p>
-    </div>
-
-    <div class="stat-box">
-      <h3>100%</h3>
-      <p>Locally sourced produce</p>
-    </div>
-
-  </div>
-</div>
-
 
 <!-- HOW IT WORKS -->
 
@@ -902,37 +868,37 @@
     <div class="product-grid">
 
       <div class="product-card">
-        <img src="LAND1.jpg" alt="Fresh vegetables">
+        <img src="photo%20rip/seasonal veg.png" alt="Fresh vegetables">
 
         <div class="product-content">
           <h3>Seasonal Vegetables</h3>
 
           <p>
-            Weekly harvested vegetables packed fresh and delivered directly to households and businesses.
+            Weekly harvested vegetables are packed fresh and delivered directly to households and businesses.
           </p>
         </div>
       </div>
 
       <div class="product-card">
-        <img src="LANDWITHWORKER.jpg" alt="Community farming">
+        <img src="photo%20rip/garden.jpg" alt="Community farming">
 
         <div class="product-content">
           <h3>Community Growers</h3>
 
           <p>
-            HHN supports local growers by creating structured access to customers and recurring supply opportunities.
+            Home Harvest Network supports local growers by creating structured access to customers and recurring supply opportunities.
           </p>
         </div>
       </div>
 
       <div class="product-card">
-        <img src="business.jpeg" alt="Business supply">
+        <img src="photo%20rip/business.jpeg" alt="Business supply">
 
         <div class="product-content">
           <h3>Business Supply</h3>
 
           <p>
-            Restaurants, schools, and independent businesses can access reliable local produce supply through HHN.
+            Restaurants, schools, and independent businesses can access a reliable local produce supply through Home Harvest Network.
           </p>
         </div>
       </div>
@@ -992,7 +958,7 @@
       <div>
 
         <img 
-          src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=1400&auto=format&fit=crop" 
+          src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1400&auto=format&fit=crop"  
           alt="Restaurant produce"
         >
 
@@ -1024,7 +990,7 @@
 
   <!-- CTA -->
 
-  <section class="cta" style="margin:90px 0;">
+  <section class="cta-section">
     <div class="container">
 
       <h2>
@@ -1050,11 +1016,11 @@
   <footer>
     <div class="container footer-wrap">
       <div class="footer-logo">
-        <img src="logo-bottom.png" alt="Home Harvest Network Logo">
+        <img src="photo%20rip/logo-bottom.png" alt="Home Harvest Network Logo">
       </div>
 
       <div class="footer-right">
-        © 2025 Home Harvest Network · KwaZulu-Natal, South Africa
+        © 2026 Home Harvest Network · KwaZulu-Natal, South Africa
       </div>
 
     </div>
