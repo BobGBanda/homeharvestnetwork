@@ -269,21 +269,30 @@
       font-size: 15px;
       color: #111;
       max-width: none;
+      flex: 1 1 220px;
     }
 
     .cta-inputs {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(180px, 1fr));
       gap: 8px;
-      flex-wrap: wrap;
+      flex: 1 1 460px;
+      max-width: 620px;
     }
 
-    .cta-inputs input {
+    .cta-inputs input,
+    .cta-inputs textarea {
       padding: 10px 14px;
       border: 1px solid #ddd;
       border-radius: 8px;
       font-size: 14px;
-      min-width: 180px;
       font-family: 'Inter', sans-serif;
+    }
+
+    .cta-inputs textarea {
+      grid-column: 1 / -1;
+      min-height: 82px;
+      resize: vertical;
     }
 
     .cta-inputs button {
@@ -297,6 +306,7 @@
       font-weight: 600;
       cursor: pointer;
       white-space: nowrap;
+      grid-column: 1 / -1;
     }
 
     .cta-inputs button:hover {
@@ -306,17 +316,18 @@
     /* FOOTER */
 
     footer {
-      border-top: 1px solid var(--border);
       padding: 8px 0;
+      border-top: 1px solid var(--border);
       background: var(--cream);
     }
 
     .footer-wrap {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px;
+      text-align: center;
     }
 
     .footer-logo img {
@@ -340,6 +351,12 @@
         grid-template-columns: 1fr;
       }
 
+      .cta-inputs {
+        grid-template-columns: 1fr;
+        max-width: none;
+        width: 100%;
+      }
+
       .nav-links {
         display: none;
       }
@@ -351,6 +368,7 @@
     }
 
   </style>
+  <link rel="stylesheet" href="css/mobile-nav.css">
 </head>
 <body>
 
@@ -378,7 +396,7 @@
         <a href="contact.html">Contact</a>
       </div>
 
-      <a href="#" class="nav-btn">
+      <a href="index.html#waitlist" class="nav-btn">
         Join Waitlist
       </a>
     </div>
@@ -450,29 +468,37 @@
           Ready to earn from your backyard? We'll call you within 24 hours.
         </p>
 
-        <div class="cta-inputs">
-          <input type="tel" placeholder="Your phone number">
+        <form class="cta-inputs" data-lead-form data-lead-type="grower" data-source-page="for-growers.html">
+          <input name="name" type="text" placeholder="Your full name" required>
+          <input name="phone" type="tel" placeholder="Your phone number" required>
+          <input name="email" type="email" placeholder="Email address">
+          <input name="suburb" type="text" placeholder="Suburb / town" required>
+          <textarea name="message" rows="3" placeholder="Tell us about your growing space: garden size, crops grown, water access, and best time for a call" required></textarea>
 
-          <button type="button">
+          <button type="submit">
             Call Me Back →
           </button>
-        </div>
+        </form>
       </div>
     </div>
   </div>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="container footer-wrap">
-      <div class="footer-logo">
-        <img src="photo%20rip/logo-bottom.png" alt="Home Harvest Network Logo">
-      </div>
 
-      <div class="footer-right">
-        © 2026 Home Harvest Network · KwaZulu-Natal, South Africa
+  <footer>
+      <div class="container footer-wrap">
+        <div class="footer-logo">
+          <img src="photo%20rip/logo-bottom.png" alt="Home Harvest Network Logo">
+        </div>
+  
+        <div class="footer-right">
+          © 2025 Home Harvest Network · KwaZulu-Natal, South Africa
       </div>
-    </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/mobile-nav.js"></script>
+  <script src="js/leads.js"></script>
 </body>
 </html>

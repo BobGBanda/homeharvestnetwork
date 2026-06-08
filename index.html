@@ -374,18 +374,32 @@
     }
 
     .cta-form{
-      display:flex;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(220px,1fr));
       gap:12px;
-      justify-content:center;
-      flex-wrap:wrap;
+      max-width:760px;
+      margin:0 auto;
     }
 
-    .cta-form input{
+    .cta-form input,
+    .cta-form select,
+    .cta-form textarea{
       padding:15px 18px;
       border:none;
       border-radius:12px;
-      min-width:300px;
       font-size:15px;
+      font-family:'Inter',sans-serif;
+      width:100%;
+    }
+
+    .cta-form select,
+    .cta-form textarea{
+      grid-column:1 / -1;
+    }
+
+    .cta-form textarea{
+      min-height:110px;
+      resize:vertical;
     }
 
     .cta-form button{
@@ -396,6 +410,7 @@
       color:#132015;
       font-weight:700;
       cursor:pointer;
+      grid-column:1 / -1;
     }
 
     /* FOOTER */
@@ -581,15 +596,20 @@
     display:none;
   }
 
+  .cta-form{
+    grid-template-columns:1fr;
+  }
+
 }
 
 </style>
+  <link rel="stylesheet" href="css/mobile-nav.css">
 </head>
 
 <body>
 
 <div class="announcement-bar">
-  🌿 Fresh produce from local KwaZulu-Natal growers · Weekly subscriptions now open
+  🌿 Fresh produce from local KwaZulu-Natal and Western Cape growers · Weekly subscriptions now open
 </div>
 
 
@@ -619,7 +639,7 @@
         <a href="contact.html">Contact</a>
       </div>
 
-      <a href="#" class="nav-btn">
+      <a href="#waitlist" class="nav-btn">
         Join Waitlist
       </a>
     </div>
@@ -644,11 +664,11 @@
 
         <div class="hero-buttons">
 
-          <a href="#" class="btn btn-primary">
+          <a href="#waitlist" class="btn btn-primary">
             Join the Waitlist
           </a>
 
-          <a href="#" class="btn btn-secondary">
+          <a href="for-growers.html" class="btn btn-secondary">
             Become a Grower
           </a>
 
@@ -776,7 +796,7 @@
               <li>Weekly or bi-weekly delivery</li>
             </ul>
 
-            <a href="#" class="btn btn-primary">
+            <a href="#waitlist" class="btn btn-primary" data-box-choice="Mini Box">
               Join Waitlist
             </a>
 
@@ -807,7 +827,7 @@
               <li>Flexible delivery schedule</li>
             </ul>
 
-            <a href="#" class="btn btn-primary">
+            <a href="#waitlist" class="btn btn-primary" data-box-choice="Family Box">
               Join Waitlist
             </a>
 
@@ -838,7 +858,7 @@
               <li>Best for larger households</li>
             </ul>
 
-            <a href="#" class="btn btn-primary">
+            <a href="#waitlist" class="btn btn-primary" data-box-choice="Premium Box">
               Join Waitlist
             </a>
 
@@ -930,7 +950,7 @@
           We coordinate crop planning, collection, quality control, and distribution while growers focus on producing high-quality crops.
         </p>
 
-        <a href="#" class="btn btn-primary">
+        <a href="for-growers.html" class="btn btn-primary">
           Become a Grower
         </a>
 
@@ -978,7 +998,7 @@
           We manage standing orders, QC, delivery scheduling and full traceability so your business always has fresh, neighbourhood-grown produce.
         </p>
 
-        <a href="#" class="btn btn-primary">
+        <a href="for-business.html" class="btn btn-primary">
           Partner With Us
         </a>
 
@@ -990,7 +1010,7 @@
 
   <!-- CTA -->
 
-  <section class="cta-section">
+  <section class="cta-section" id="waitlist">
     <div class="container">
 
       <h2>
@@ -998,15 +1018,28 @@
       </h2>
 
       <p>
-        Subscribe to a weekly box, become a grower, or supply your business. Home Harvest Network is transforming how fresh food reaches KwaZulu-Natal households.
+        Subscribe to a weekly box, become a grower, or supply your business. Home Harvest Network is transforming how fresh food reaches KwaZulu-Natal and Western Cape households.
       </p>
 
-      <div class="cta-form">
-        <input type="email" placeholder="Your email address"/>
-        <button>
+      <form class="cta-form" data-lead-form data-lead-type="waitlist" data-source-page="index.html">
+        <input name="name" type="text" placeholder="Your full name" required />
+        <input name="email" type="email" placeholder="Your email address" required />
+        <input name="phone" type="tel" placeholder="Phone number" required />
+        <input name="suburb" type="text" placeholder="Delivery suburb / area" required />
+        <select name="subject" data-box-select required>
+          <option value="">Which box are you interested in?</option>
+          <option>Mini Box</option>
+          <option>Family Box</option>
+          <option>Premium Box</option>
+         <!-- <option>Starter Box</option>
+          <option>Chef Box</option> -->
+          <option>Not sure yet</option>
+        </select>
+        <textarea name="message" rows="4" placeholder="Tell us your household size, preferred delivery frequency, produce preferences, allergies, and any delivery notes"></textarea>
+        <button type="submit">
           Get Started
         </button>
-      </div>
+      </form>
 
     </div>
   </section>
@@ -1020,12 +1053,17 @@
       </div>
 
       <div class="footer-right">
-        © 2026 Home Harvest Network · KwaZulu-Natal, South Africa
+        © 2025 Home Harvest Network · KwaZulu-Natal, South Africa
       </div>
 
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/mobile-nav.js"></script>
+  <script src="js/waitlist-box-choice.js"></script>
+  <script src="js/leads.js"></script>
 </body>
 
 </html>

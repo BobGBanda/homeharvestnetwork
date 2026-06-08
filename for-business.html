@@ -1,588 +1,758 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For Business | Home Harvest Network</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>For Business | Home Harvest Network</title>
 
-  <link rel="icon" type="image/png" href="photo%20rip/logo-banner.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+			<link rel="icon" type="image/png" href="photo%20rip/logo-banner.png">
+				<link rel="preconnect" href="https://fonts.googleapis.com">
+					<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
+						<style>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+							* {
+							margin: 0;
+							padding: 0;
+							box-sizing: border-box;
+							}
 
-    :root {
-      --green: #5d8c51;
-      --green-dark: #2f4934;
-      --cream: #f7f3eb;
-      --sand: #ece4d6;
-      --text: #172019;
-      --muted: #667063;
-      --white: #ffffff;
-      --border: #ddd7ca;
-    }
+							:root {
+							--green: #5d8c51;
+							--green-dark: #2f4934;
+							--cream: #f7f3eb;
+							--sand: #ece4d6;
+							--text: #221a1a;
+							--muted: #677168;
+							--white: #ffffff;
+							--border: #ddd7ca;
+							}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      line-height: 1.6;
-    }
+							body {
+							font-family: 'Inter', sans-serif;
+							background: var(--cream);
+							color: var(--text);
+							line-height: 1.6;
+							}
 
-    img {
-      width: 100%;
-      display: block;
-      border-radius: 16px;
-    }
+							img {
+							width: 100%;
+							display: block;
+							border-radius: 16px;
+							}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+							a {
+							text-decoration: none;
+							color: inherit;
+							}
 
-    .container {
-      width: min(1150px, 90%);
-      margin: auto;
-    }
+							.container {
+							width: min(1150px, 90%);
+							margin: auto;
+							}
 
-    /* NAV */
+							/* NAV */
 
-    nav {
-      background: rgba(247, 243, 235, .95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+							nav {
+							background: rgba(247, 243, 235, .95);
+							backdrop-filter: blur(12px);
+							border-bottom: 1px solid var(--border);
+							position: sticky;
+							top: 0;
+							z-index: 100;
+							}
 
-    .nav-wrap {
-      min-height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-      padding: 10px 0;
-    }
+							.nav-wrap {
+							min-height: 60px;
+							display: flex;
+							align-items: center;
+							justify-content: space-between;
+							gap: 30px;
+							padding: 10px 0;
+							}
 
-    .brand-nav {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: nowrap;
-      max-width: 420px;
-    }
+							.brand-nav {
+							display: flex;
+							align-items: center;
+							gap: 18px;
+							flex-wrap: nowrap;
+							max-width: 420px;
+							}
 
-    .brand-text {
-      display: flex;
-      align-items: center;
-    }
+							.brand-text {
+							display: flex;
+							align-items: center;
+							}
 
-    .logo img {
-      height: 100px;
-      width: auto;
-      display: block;
-    }
+							.logo img {
+							height: 100px;
+							width: auto;
+							display: block;
+							}
 
-    .brand-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(15px, 2.6vw, 25px);
-      line-height: 1.05;
-      letter-spacing: -.03em;
-      text-transform: uppercase;
-      margin: 0;
-      color: var(--green-dark);
-    }
+							.brand-title {
+							font-family: 'Playfair Display', serif;
+							font-size: clamp(15px, 2.6vw, 25px);
+							line-height: 1.05;
+							letter-spacing: -.03em;
+							text-transform: uppercase;
+							margin: 0;
+							color: var(--green-dark);
+							}
 
-    .brand-title span {
-      display: block;
-    }
+							.brand-title span {
+							display: block;
+							}
 
-    .brand-title span:nth-child(2) {
-      margin-left: 1.1rem;
-    }
+							.brand-title span:nth-child(2) {
+							margin-left: 1.1rem;
+							}
 
-    .brand-title span:nth-child(3) {
-      margin-left: 2.2rem;
-    }
+							.brand-title span:nth-child(3) {
+							margin-left: 2.2rem;
+							}
 
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      font-size: 15px;
-      color: var(--muted);
-      align-items: center;
-    }
+							.nav-links {
+							display: flex;
+							gap: 28px;
+							color: var(--muted);
+							font-size: 15px;
+							align-items: center;
+							}
 
-    .nav-links a:hover {
-      color: var(--green-dark);
-    }
+							.nav-links a:hover {
+							color: var(--green-dark);
+							}
 
-    .nav-btn {
-      background: var(--green-dark);
-      color: white;
-      padding: 12px 20px;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 600;
-      white-space: nowrap;
-    }
+							.nav-btn {
+							background: var(--green-dark);
+							color: white;
+							padding: 12px 20px;
+							border-radius: 10px;
+							font-size: 14px;
+							font-weight: 600;
+							white-space: nowrap;
+							}
 
-    /* PAGE */
+							/* HERO */
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 42px;
-      margin: 32px 0 16px;
-      color: var(--green-dark);
-    }
+							.hero {
+							padding: 70px 0 80px;
+							}
 
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      color: var(--green-dark);
-      margin-top: 48px;
-      margin-bottom: 18px;
-    }
+							.hero-grid {
+							display: grid;
+							grid-template-columns: 1.1fr 1fr;
+							gap: 70px;
+							align-items: center;
+							}
 
-    p {
-      max-width: 720px;
-      line-height: 1.7;
-      color: var(--muted);
-    }
+							.eyebrow {
+							font-family: 'Playfair Display', serif;
+							text-transform: uppercase;
+							letter-spacing: 3px;
+							color: var(--green);
+							font-size: 55px;
+							font-weight: 700;
+							margin-bottom: 28px;
+							width: 100%;
+							text-align: center;
+							}
 
-    .eyebrow {
-      display: block;
-      color: var(--green);
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
+							h1 {
+							font-family: 'Playfair Display', serif;
+							font-size: 60px;
+							line-height: 1.05;
+							margin-bottom: 28px;
+							color: var(--green-dark);
+							}
 
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 40px;
-      align-items: center;
-      padding: 70px 0 80px;
-    }
+							.hero p {
+							color: var(--muted);
+							font-size: 18px;
+							margin-bottom: 24px;
+							max-width: 580px;
+							}
 
-    .hero img {
-      width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, .08);
-    }
+							.hero-image {
+							height: 500px;
+							border-radius: 24px;
+							overflow: hidden;
+							}
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 30px;
-    }
+							.hero-image img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+							}
 
-    .feature {
-      background: white;
-      padding: 28px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, .05);
-    }
+							/* SECTIONS */
 
-    .feature h3 {
-      font-size: 22px;
-      margin-bottom: 12px;
-      color: var(--green-dark);
-    }
+							section {
+							padding: 50px 0;
+							}
 
-    .feature p {
-      color: var(--muted);
-    }
+							.section-title {
+							font-family: 'Playfair Display', serif;
+							font-size: 44px;
+							margin-bottom: 8px;
+							color: var(--green-dark);
+							}
 
-    .contact-card {
-      background: white;
-      padding: 28px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, .05);
-      margin-top: 30px;
-    }
+							.section-sub {
+							color: var(--muted);
+							max-width: 700px;
+							margin-bottom: 36px;
+							font-size: 17px;
+							}
 
-    .contact-card h3 {
-      font-size: 22px;
-      margin-bottom: 16px;
-      color: var(--green-dark);
-    }
+							/* FEATURES */
 
-    .contact-card p {
-      color: var(--muted);
-      line-height: 1.7;
-    }
+							.features {
+							display: grid;
+							grid-template-columns: repeat(3, 1fr);
+							gap: 24px;
+							margin-top: 40px;
+							}
 
-    /* B2B SECTION */
+							.feature {
+							background: white;
+							border: 1px solid var(--border);
+							border-radius: 20px;
+							padding: 34px;
+							}
 
-    .b2b-section {
-      background: #f0f0ee;
-      padding: 28px;
-      border-radius: 12px;
-      margin-top: 22px;
-    }
+							.feature h3 {
+							margin-bottom: 14px;
+							color: var(--green-dark);
+							font-size: 22px;
+							}
 
-    .b2b-title {
-      display: block;
-      color: #5FC55E;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
+							.feature p {
+							color: var(--muted);
+							font-size: 15px;
+							}
 
-    .b2b-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 18px;
-    }
+							/* B2B SECTION */
 
-    .b2b-card {
-      background: white;
-      padding: 18px;
-      border-radius: 12px;
-      border: 1px solid #eee;
-    }
+							.b2b-wrapper {
+							background: white;
+							}
 
-    .b2b-icon {
-      font-size: 22px;
-      margin-bottom: 8px;
-    }
+							.b2b-section {
+							background: white;
+							border-radius: 24px;
+							}
 
-    .b2b-card h3 {
-      margin: 0 0 8px;
-      color: var(--green-dark);
-      font-size: 15px;
-    }
+							.b2b-title {
+							display: inline-block;
+							color: var(--green);
+							font-weight: 700;
+							margin-bottom: 18px;
+							letter-spacing: 1px;
+							text-transform: uppercase;
+							}
 
-    .b2b-card p {
-      color: var(--muted);
-      margin: 0 0 8px;
-      font-size: 13px;
-      max-width: none;
-    }
+							.b2b-grid {
+							display: grid;
+							grid-template-columns: repeat(3, 1fr);
+							gap: 24px;
+							margin-top: 40px;
+							}
 
-    .b2b-badge {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 100px;
-      background: #eaf3de;
-      color: #5FC55E;
-      font-weight: 700;
-      font-size: 12px;
-    }
+							.b2b-card {
+							background: var(--cream);
+							padding: 28px;
+							border-radius: 20px;
+							border: 1px solid var(--border);
+							}
 
-    .b2b-form-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      align-items: start;
-      margin-top: 18px;
-    }
+							.b2b-icon {
+							font-size: 28px;
+							margin-bottom: 16px;
+							}
 
-    .form-inputs {
-      background: white;
-      padding: 14px;
-      border-radius: 10px;
-      border: 1px solid #eee;
-    }
+							.b2b-card h3 {
+							margin-bottom: 12px;
+							color: var(--green-dark);
+							font-size: 22px;
+							}
 
-    .form-inputs input,
-    .form-inputs select {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 8px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 14px;
-    }
+							.b2b-card p {
+							color: var(--muted);
+							margin-bottom: 18px;
+							font-size: 15px;
+							max-width: none;
+							}
 
-    .form-inputs button {
-      background: #5FC55E;
-      border: none;
-      padding: 10px 14px;
-      border-radius: 8px;
-      font-weight: 700;
-      color: white;
-      cursor: pointer;
-    }
+							.b2b-badge {
+							display: inline-block;
+							padding: 8px 14px;
+							border-radius: 100px;
+							background: #eaf3de;
+							color: var(--green);
+							font-weight: 700;
+							font-size: 13px;
+							}
 
-    .b2b-checklist {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 13px;
-    }
+							/* FORM SECTION */
 
-    .b2b-checklist div {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
+							.b2b-form-section {
+							display: grid;
+							grid-template-columns: 1fr 1fr;
+							gap: 40px;
+							align-items: start;
+							margin-top: 60px;
+							}
 
-    /* FOOTER */
+							.form-inputs {
+							background: var(--cream);
+							padding: 28px;
+							border-radius: 20px;
+							border: 1px solid var(--border);
+							}
 
-    footer {
-      padding: 8px 0;
-      border-top: 1px solid var(--border);
-      background: var(--cream);
-    }
+							.form-inputs input,
+							.form-inputs select,
+							.form-inputs textarea {
+							width: 100%;
+							padding: 14px;
+							margin-bottom: 12px;
+							border: 1px solid var(--border);
+							border-radius: 10px;
+							font-size: 14px;
+							font-family: 'Inter', sans-serif;
+							background: white;
+							}
 
-    .footer-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      text-align: center;
-    }
+							.form-inputs textarea {
+							min-height: 130px;
+							resize: vertical;
+							}
 
-    .footer-logo img {
-      height: 300px;
-      width: auto;
-      display: block;
-      border-radius: 0;
-    }
+							.form-inputs button {
+							background: var(--green-dark);
+							border: none;
+							padding: 14px 18px;
+							border-radius: 10px;
+							font-weight: 700;
+							color: white;
+							cursor: pointer;
+							width: 100%;
+							font-size: 15px;
+							}
 
-    .footer-right {
-      color: var(--muted);
-      font-size: 14px;
-    }
+							.b2b-checklist {
+							display: flex;
+							flex-direction: column;
+							gap: 12px;
+							margin-top: 24px;
+							color: var(--muted);
+							font-size: 15px;
+							}
 
-    /* MOBILE */
+							.b2b-checklist div {
+							display: flex;
+							align-items: center;
+							gap: 10px;
+							}
 
-    @media (max-width: 900px) {
+							/* CONTACT */
 
-      h1 {
-        font-size: 36px;
-      }
+							.contact-card {
+							background: white;
+							border: 1px solid var(--border);
+							border-radius: 24px;
+							padding: 40px;
+							margin-top: 20px;
+							}
 
-      .hero,
-      .features,
-      .b2b-grid,
-      .b2b-form-section {
-        grid-template-columns: 1fr;
-      }
+							.contact-card h3 {
+							font-size: 28px;
+							margin-bottom: 16px;
+							color: var(--green-dark);
+							font-family: 'Playfair Display', serif;
+							}
 
-      .nav-links {
-        display: none;
-      }
+							.contact-card p {
+							color: var(--muted);
+							font-size: 16px;
+							}
 
-    }
+							/* FOOTER */
 
-  </style>
+							footer {
+							padding: 8px 0;
+							border-top: 1px solid var(--border);
+							background: var(--cream);
+							}
+
+							.footer-wrap {
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							justify-content: center;
+							gap: 5px;
+							text-align: center;
+							}
+
+							.footer-logo img {
+							height: 300px;
+							width: auto;
+							display: block;
+							border-radius: 0;
+							}
+
+							.footer-right {
+							color: var(--muted);
+							font-size: 14px;
+							}
+
+							/* MOBILE */
+
+							@media (max-width: 900px) {
+
+							h1 {
+							font-size: 46px;
+							}
+
+							.hero-grid,
+							.features,
+							.b2b-grid,
+							.b2b-form-section {
+							grid-template-columns: 1fr;
+							}
+
+							.nav-links {
+							display: none;
+							}
+
+							.eyebrow {
+							font-size: 36px;
+							}
+
+							.section-title {
+							font-size: 34px;
+							}
+
+							.hero-image {
+							height: 350px;
+							}
+
+							}
+
+						</style>
+
+						<link rel="stylesheet" href="css/mobile-nav.css">
 </head>
-<body>
 
-  <nav>
-    <div class="container nav-wrap">
-      <div class="brand-nav">
-        <div class="logo">
-          <img src="photo%20rip/logo-banner.png" alt="Home Harvest Network Logo">
+	<body>
+
+		<!-- NAV -->
+
+		<nav>
+			<div class="container nav-wrap">
+
+				<div class="brand-nav">
+					<div class="logo">
+						<img src="photo%20rip/logo-banner.png" alt="Home Harvest Network Logo">
         </div>
-        <div class="brand-text">
-          <h1 class="brand-title">
-            <span>Home</span>
-            <span>Harvest</span>
-            <span>Network</span>
-          </h1>
+
+					<div class="brand-text">
+						<h1 class="brand-title">
+							<span>Home</span>
+							<span>Harvest</span>
+							<span>Network</span>
+						</h1>
+					</div>
+				</div>
+
+				<div class="nav-links">
+					<a href="index.html">Home</a>
+					<a href="about.html">About</a>
+					<a href="subscriptions.html">Subscriptions</a>
+					<a href="for-growers.html">For Growers</a>
+					<a href="for-business.html">For Business</a>
+					<a href="contact.html">Contact</a>
+				</div>
+
+				<a href="index.html#waitlist" class="nav-btn">
+					Join Waitlist
+				</a>
+
+			</div>
+		</nav>
+
+		<!-- HERO -->
+
+		<section class="hero">
+
+			<div class="container">
+
+				<div class="eyebrow">
+					Business sourcing
+				</div>
+
+				<div class="hero-grid">
+
+					<div>
+
+						<h1>
+							Partner with local growers for fresh supply
+						</h1>
+
+						<p>
+							Build a reliable supply chain with fresh produce sourced from household growers in KwaZulu-Natal.
+						</p>
+
+						<p>
+							Home Harvest Network helps restaurants, grocers, and commercial buyers access structured local supply with transparent sourcing and coordinated delivery.
+						</p>
+
+					</div>
+
+					<div class="hero-image">
+						<img src="photo%20rip/business.jpeg" alt="Business supply">
         </div>
+
+				</div>
+
+			</div>
+
+		</section>
+
+		<!-- FEATURES -->
+
+		<section>
+
+			<div class="container">
+
+				<h2 class="section-title">
+					Business solutions
+				</h2>
+
+				<p class="section-sub">
+					Flexible sourcing options designed for businesses looking for reliable local produce supply.
+				</p>
+
+				<div class="features">
+
+					<div class="feature">
+						<h3>Quality sourcing</h3>
+
+						<p>
+							Access fresh produce grown close to your operations, reducing travel time and improving shelf life.
+						</p>
+					</div>
+
+					<div class="feature">
+						<h3>Flexible orders</h3>
+
+						<p>
+							Choose the delivery frequency and product mix that best fits your business needs.
+						</p>
+					</div>
+
+					<div class="feature">
+						<h3>Local partnerships</h3>
+
+						<p>
+							Support local households and small-scale growers while keeping supply chains transparent.
+						</p>
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+
+		<!-- B2B -->
+
+		<section class="b2b-wrapper">
+
+			<div class="container">
+
+				<div class="b2b-section">
+
+					<span class="b2b-title">
+						For Commercial Buyers
+					</span>
+
+					<h2 class="section-title">
+						Reliable supply.<br>
+          Local provenance.
+        </h2>
+
+					<p class="section-sub">
+						Weekly deliveries of fresh, locally grown vegetables to restaurants, grocers, and corporate canteens across KwaZulu-Natal.
+					</p>
+
+					<div class="b2b-grid">
+
+						<div class="b2b-card">
+
+							<div class="b2b-icon">🍽️</div>
+
+							<h3>Restaurants & Cafés</h3>
+
+							<p>
+								Premium leafy greens and mixed vegetables on a weekly schedule.
+							</p>
+
+							<span class="b2b-badge">
+								From R25/kg
+							</span>
+
+						</div>
+
+						<div class="b2b-card">
+
+							<div class="b2b-icon">🏪</div>
+
+							<h3>Independent Grocers</h3>
+
+							<p>
+								Reliable weekly stock with consistent spec and transparent pricing.
+							</p>
+
+							<span class="b2b-badge">
+								Weekly subscription
+							</span>
+
+						</div>
+
+						<div class="b2b-card">
+
+							<div class="b2b-icon">🏢</div>
+
+							<h3>Corporate Canteens</h3>
+
+							<p>
+								High-volume standing orders with structured delivery coordination.
+							</p>
+
+							<span class="b2b-badge">
+								Volume pricing
+							</span>
+
+						</div>
+
+					</div>
+
+					<!-- FORM -->
+
+					<div class="b2b-form-section">
+
+						<div>
+
+							<h2 class="section-title">
+								Get your free supply proposal
+							</h2>
+
+							<p>
+								Our commercial team will send you a tailored weekly supply proposal within 48 hours.
+							</p>
+
+							<div class="b2b-checklist">
+								<div>✓ PO and invoice auto-generation</div>
+								<div>✓ Standing orders with substitution policy</div>
+								<div>✓ Delivery window selection</div>
+								<!--<div>✓ Quality SLA dashboard access</div> -->
+							</div>
+
+						</div>
+
+						<form class="form-inputs" data-lead-form="" data-lead-type="business" data-source-page="for-business.html">
+
+							<input name="business_name" type="text" placeholder="Business name" required="">
+
+								<div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+
+									<input name="name" type="text" placeholder="Contact name" required="">
+
+										<input name="phone" type="tel" placeholder="Phone" required="">
+
+            </div>
+
+								<input name="email" type="email" placeholder="Email address" required="">
+
+									<input name="suburb" type="text" placeholder="Delivery suburb / area" required="">
+
+										<select name="business_type" required="">
+											<option value="">Business type</option>
+											<option>Restaurant / Café</option>
+											<option>Independent Grocer</option>
+											<option>Corporate Canteen</option>
+											<option>School / Hospitality</option>
+											<option>Other</option>
+										</select>
+
+										<textarea
+										  name="message"
+										  rows="4"
+										  placeholder="Tell us what you need: produce items, approximate weekly quantities, delivery frequency, preferred delivery days, and any quality specs"
+										  required=""
+            ></textarea>
+
+										<button type="submit">
+											Send Me a Supply Proposal →
+										</button>
+
+									</form>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+
+		<!-- CONTACT -->
+
+		<section>
+
+			<div class="container">
+
+				<div class="contact-card">
+
+					<h3>
+						Start a business partnership
+					</h3>
+
+					<p>
+						If your business is interested in local sourcing, submit a request through the contact page and we'll help match your needs with available growers and delivery options.
+					</p>
+
+				</div>
+
+			</div>
+
+		</section>
+
+		<!-- FOOTER -->
+
+		<footer>
+
+			<div class="container footer-wrap">
+
+				<div class="footer-logo">
+					<img src="photo%20rip/logo-bottom.png" alt="Home Harvest Network Logo">
       </div>
 
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="subscriptions.html">Subscriptions</a>
-        <a href="for-growers.html">For Growers</a>
-        <a href="for-business.html">For Business</a>
-        <a href="contact.html">Contact</a>
-      </div>
+				<div class="footer-right">
+					© 2025 Home Harvest Network · KwaZulu-Natal, South Africa
+				</div>
 
-      <a href="#" class="nav-btn">
-        Join Waitlist
-      </a>
-    </div>
-  </nav>
+			</div>
 
-  <div class="container">
-    <section class="hero">
-      <div>
-        <span class="eyebrow">
-          Business sourcing
-        </span>
+		</footer>
 
-        <h1>
-          Partner with local growers for fresh supply
-        </h1>
+		<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+		<script src="js/supabase-config.js"></script>
+		<script src="js/mobile-nav.js"></script>
+		<script src="js/leads.js"></script>
 
-        <p>
-          Build a reliable supply chain with fresh produce sourced from household growers in KwaZulu-Natal. This page helps businesses discover how to work with our network.
-        </p>
-      </div>
-
-      <img src="photo%20rip/business.jpeg" alt="Business supply" />
-    </section>
-
-    <section>
-      <h2>
-        Business solutions
-      </h2>
-
-      <div class="features">
-        <div class="feature">
-          <h3>
-            Quality sourcing
-          </h3>
-
-          <p>
-            Access fresh produce grown close to your operations, reducing travel time and improving shelf life.
-          </p>
-        </div>
-
-        <div class="feature">
-          <h3>
-            Flexible orders
-          </h3>
-
-          <p>
-            Choose the delivery frequency and product mix that best fits your business needs.
-          </p>
-        </div>
-
-        <div class="feature">
-          <h3>
-            Local partnerships
-          </h3>
-
-          <p>
-            Support local households and small-scale growers while keeping supply chains transparent.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- B2B SECTION -->
-    <section class="b2b-section">
-      <span class="b2b-title">For Commercial Buyers</span>
-
-      <h2>
-        Reliable supply.<br>
-        <em>Local provenance.</em>
-      </h2>
-
-      <p>
-        Weekly deliveries of fresh, locally grown vegetables to restaurants, grocers, and corporate canteens across KZN. Standing orders, PO generation, and SLA dashboards included.
-      </p>
-
-      <div class="b2b-grid">
-        <div class="b2b-card">
-          <div class="b2b-icon">🍽️</div>
-
-          <h3>Restaurants & Cafés</h3>
-
-          <p>
-            Premium leafy greens and mixed vegetables on a weekly schedule. Tell your guests exactly which neighbourhood grew their food.
-          </p>
-
-          <span class="b2b-badge">From R25/kg</span>
-        </div>
-
-        <div class="b2b-card">
-          <div class="b2b-icon">🏪</div>
-
-          <h3>Independent Grocers</h3>
-
-          <p>
-            Reliable weekly stock of fast-moving vegetables with consistent spec and weight. Flexible volumes, transparent pricing, 30-day invoicing.
-          </p>
-
-          <span class="b2b-badge">Weekly subscription</span>
-        </div>
-
-        <div class="b2b-card">
-          <div class="b2b-icon">🏢</div>
-
-          <h3>Corporate Canteens</h3>
-
-          <p>
-            High-volume standing orders with monthly invoicing, SLA dashboards, and a compelling sustainability narrative for your ESG reporting.
-          </p>
-
-          <span class="b2b-badge">Volume pricing</span>
-        </div>
-      </div>
-
-      <div class="b2b-form-section">
-        <div>
-          <h3>Get your free supply proposal.</h3>
-
-          <p>
-            Fill in your details. Our commercial team will send you a tailored weekly supply proposal within 48 hours — including pricing tiers, MOQs, and spec sheets. First sample delivery on us.
-          </p>
-
-          <div class="b2b-checklist">
-            <div>✓ PO and invoice auto-generation</div>
-            <div>✓ Standing orders with substitution policy</div>
-            <div>✓ Delivery window selection</div>
-            <div>✓ Quality SLA dashboard access</div>
-          </div>
-        </div>
-
-        <div class="form-inputs">
-          <input type="text" placeholder="Business name">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-            <input type="text" placeholder="Contact name">
-            <input type="tel" placeholder="Phone">
-          </div>
-          <input type="email" placeholder="Email address">
-          <select>
-            <option>Business type</option>
-            <option>Restaurant / Café</option>
-            <option>Independent Grocer</option>
-            <option>Corporate Canteen</option>
-          </select>
-          <button>
-            Send Me a Supply Proposal →
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <div class="contact-card">
-      <h3>
-        Start a business partnership
-      </h3>
-
-      <p>
-        If your business is interested in local sourcing, submit a request through the contact page and we'll help match your needs with available growers and delivery options.
-      </p>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-
-  <footer>
-    <div class="container footer-wrap">
-      <div class="footer-logo">
-        <img src="photo%20rip/logo-bottom.png" alt="Home Harvest Network Logo">
-      </div>
-
-      <div class="footer-right">
-        © 2026 Home Harvest Network · KwaZulu-Natal, South Africa
-      </div>
-    </div>
-  </footer>
-
-</body>
+	</body>
 </html>
