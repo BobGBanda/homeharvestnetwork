@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms &amp; Conditions | Home Harvest Network</title>
+
+  <!--
+    DRAFT NOTICE (internal use only — remove once legal review is complete):
+    This page is based on HHN_Terms_and_Conditions.md and
+    HHN_Refund_and_Cancellation_Policy.md, prepared as internal drafts for
+    Home Harvest Network. It should be reviewed by a qualified South African
+    attorney before being treated as final, to ensure full compliance with
+    the Consumer Protection Act, the Electronic Communications and
+    Transactions Act, POPIA, and any other applicable law.
+  -->
+
+  <link rel="icon" type="image/png" href="photo%20rip/logo-banner.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --green: #5d8c51;
+      --green-dark: #2f4934;
+      --cream: #f7f3eb;
+      --sand: #ece4d6;
+      --text: #172019;
+      --muted: #667063;
+      --white: #ffffff;
+      --border: #ddd7ca;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1150px, 90%);
+      margin: auto;
+    }
+
+    /* NAV */
+
+    nav {
+      background: rgba(247, 243, 235, .95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-wrap {
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 10px 0;
+    }
+
+    .brand-nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: nowrap;
+      max-width: 420px;
+    }
+
+    .brand-text {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 100px;
+      width: auto;
+      display: block;
+    }
+
+    .brand-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(15px, 2.6vw, 25px);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      text-transform: uppercase;
+      margin: 0;
+      color: var(--green-dark);
+    }
+
+    .brand-title span {
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      color: var(--muted);
+      font-size: 15px;
+      align-items: center;
+    }
+
+    .nav-links a:hover {
+      color: var(--green-dark);
+    }
+
+    .nav-btn {
+      background: var(--green-dark);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* CONTENT */
+
+    .legal-section {
+      padding: 60px 0 90px;
+    }
+
+    .legal-header {
+      max-width: 760px;
+      margin-bottom: 40px;
+    }
+
+    h1.page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      color: var(--green-dark);
+      margin-bottom: 12px;
+    }
+
+    .updated {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .legal-body {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      min-width: 0; /* lets the grid column shrink instead of overflowing */
+    }
+
+    .legal-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--green-dark);
+      margin: 28px 0 10px;
+      scroll-margin-top: 100px; /* clears the site's own sticky top nav (~80px) when jumped to via the TOC */
+    }
+
+    .legal-body h2:first-child {
+      margin-top: 0;
+    }
+
+    .legal-body h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin: 18px 0 8px;
+      scroll-margin-top: 100px;
+    }
+
+    .legal-body p,
+    .legal-body li {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .legal-body ul {
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+
+    .legal-body strong {
+      color: var(--text);
+    }
+
+    /* SIDEBAR LAYOUT */
+
+    .legal-layout {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* TABLE OF CONTENTS (sidebar) */
+
+    .legal-toc {
+      position: sticky;
+      top: 100px; /* sits just below the sticky site nav */
+      background: var(--sand);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px 24px;
+      max-height: calc(100vh - 130px);
+      overflow-y: auto;
+    }
+
+    .legal-toc h2 {
+      font-family: 'Inter', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin: 0 0 12px;
+    }
+
+    .legal-toc ol {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .legal-toc li {
+      font-size: 14px;
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+
+    .legal-toc ol ol {
+      margin-top: 6px;
+      padding-left: 16px;
+    }
+
+    .legal-toc ol ol li {
+      font-size: 13px;
+      margin-bottom: 7px;
+    }
+
+    .legal-toc a {
+      color: var(--green-dark);
+      border-bottom: 1px solid transparent;
+    }
+
+    .legal-toc a:hover {
+      border-bottom-color: var(--green);
+    }
+
+    @media (max-width: 900px) {
+      .legal-layout {
+        display: block;
+      }
+
+      .legal-toc {
+        position: static;
+        max-height: none;
+        margin-bottom: 24px;
+      }
+
+      .legal-toc ol {
+        columns: 2;
+        column-gap: 32px;
+      }
+
+      .legal-toc li {
+        break-inside: avoid;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .legal-toc ol {
+        columns: 1;
+      }
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 8px 0;
+      border-top: 1px solid var(--border);
+      background: var(--cream);
+    }
+
+    .footer-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      text-align: center;
+    }
+
+    .footer-logo img {
+      height: 300px;
+      width: auto;
+      display: block;
+      border-radius: 0;
+    }
+
+    .footer-right {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-right a {
+      color: var(--green-dark);
+      text-decoration: underline;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      h1.page-title {
+        font-size: 32px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .legal-body {
+        padding: 26px;
+      }
+
+    }
+
+  </style>
+  <link rel="stylesheet" href="css/mobile-nav.css">
+</head>
+<body>
+
+  <!-- NAV -->
+
+  <nav>
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand-nav">
+        <div class="logo">
+          <img src="photo%20rip/logo-banner.png" alt="Home Harvest Network Logo">
+        </div>
+        <div class="brand-text">
+          <h1 class="brand-title">
+            <span>Home</span>
+            <span>Harvest</span>
+            <span>Network</span>
+          </h1>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="subscriptions.html">Subscriptions</a>
+        <a href="for-growers.html">For Growers</a>
+        <a href="for-business.html">For Business</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <a href="subscriptions.html#subscribe" class="nav-btn">
+        Subscribe
+      </a>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+
+  <section class="legal-section">
+    <div class="container">
+
+      <div class="legal-header">
+        <h1 class="page-title">Terms &amp; Conditions</h1>
+        <p class="updated">Last updated: 20 July 2026 · Home Harvest Network (Pty) Ltd · KwaZulu-Natal &amp; Western Cape, South Africa</p>
+      </div>
+
+      <div class="legal-layout">
+
+        <nav class="legal-toc" aria-label="Table of contents">
+          <h2>On this page</h2>
+          <ol>
+            <li><a href="#introduction">1. Introduction</a></li>
+            <li><a href="#definitions">2. Definitions</a></li>
+            <li><a href="#about-service">3. About our service</a></li>
+            <li><a href="#eligibility">4. Eligibility and account registration</a></li>
+            <li><a href="#pricing">5. Subscription plans and pricing</a></li>
+            <li><a href="#payment">6. Payment terms</a></li>
+            <li><a href="#delivery">7. Delivery</a></li>
+            <li><a href="#sourcing">8. Produce sourcing, quality, and substitutions</a></li>
+            <li>
+              <a href="#refunds-cancellations">9. Refunds and Cancellation Policy</a>
+              <ol>
+                <li><a href="#refund-overview">9.1 Overview</a></li>
+                <li><a href="#refund-cancelling">9.2 Cancelling your subscription</a></li>
+                <li><a href="#refund-returns">9.3 Returns of delivered produce</a></li>
+                <li><a href="#refund-quality">9.4 Quality guarantee</a></li>
+                <li><a href="#refund-missed">9.5 Missed or failed deliveries</a></li>
+                <li><a href="#refund-payment-fail">9.6 Failed or missing payment</a></li>
+                <li><a href="#refund-how-paid">9.7 How refunds are paid</a></li>
+                <li><a href="#refund-business">9.8 Business (B2B) clients</a></li>
+              </ol>
+            </li>
+            <li><a href="#business">10. Business (B2B) accounts</a></li>
+            <li><a href="#growers">11. Growers and informal traders</a></li>
+            <li><a href="#acceptable-use">12. Acceptable use</a></li>
+            <li><a href="#ip">13. Intellectual property</a></li>
+            <li><a href="#liability">14. Limitation of liability</a></li>
+            <li><a href="#indemnity">15. Indemnity</a></li>
+            <li><a href="#privacy">16. Privacy and data protection</a></li>
+            <li><a href="#changes">17. Changes to these terms</a></li>
+            <li><a href="#suspension">18. Suspension and termination</a></li>
+            <li><a href="#governing-law">19. Governing law and jurisdiction</a></li>
+            <li><a href="#contact">20. Complaints and contact details</a></li>
+            <li><a href="#general">21. General</a></li>
+          </ol>
+        </nav>
+
+        <div class="legal-body">
+
+        <h2 id="introduction">1. Introduction</h2>
+        <p>These Terms and Conditions ("Terms") govern your use of the Home Harvest Network website (www.homeharvestnetwork.co.za), and your relationship with Home Harvest Network (Pty) Ltd ("Home Harvest Network," "we," "us," or "our") as a subscriber, business client, or website visitor.</p>
+        <p>By creating an account, joining a subscription, placing a business order, or otherwise using our website, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our services.</p>
+        <p>These Terms should be read together with our Refund and Cancellation Policy (set out in full in section 9 below) and our Privacy Policy, both of which form part of your agreement with us.</p>
+
+        <h2 id="definitions">2. Definitions</h2>
+        <ul>
+          <li><strong>"Box" or "Subscription Box"</strong> means a recurring delivery of fresh seasonal produce under one of our subscription tiers.</li>
+          <li><strong>"Subscriber"</strong> means a consumer who has signed up for a recurring Box subscription.</li>
+          <li><strong>"Business Client"</strong> means a restaurant, grocer, school, corporate canteen, or other commercial entity that receives produce under a standing-order arrangement.</li>
+          <li><strong>"Grower"</strong> means an independent backyard grower who supplies produce into our network.</li>
+          <li><strong>"Delivery Area"</strong> means the geographic areas in KwaZulu-Natal (and, where applicable, the Western Cape) in which we currently offer delivery.</li>
+          <li><strong>"We," "us," "our"</strong> refers to Home Harvest Network (Pty) Ltd.</li>
+          <li><strong>"You," "your"</strong> refers to the person or entity using our website or services.</li>
+        </ul>
+
+        <h2 id="about-service">3. About our service</h2>
+        <p>Home Harvest Network coordinates a network of independent local growers to supply fresh, seasonal fruit and vegetables to households (via recurring subscription boxes) and businesses (via standing-order supply arrangements).</p>
+        <p>We currently offer three consumer subscription tiers — Mini Box, Family Box, and Premium Box — each with different produce quantities and pricing, delivered weekly or bi-weekly depending on your selection. Current tier contents and pricing are published on our Subscriptions page and may be updated from time to time in accordance with section 17.</p>
+        <p>We are an aggregator and distributor of produce grown by our Grower network. We do not grow produce ourselves, and the specific mix of items in any Box will vary according to seasonal availability.</p>
+
+        <h2 id="eligibility">4. Eligibility and account registration</h2>
+        <p>To subscribe to a Box or register as a Business Client, you must be at least 18 years old (or have the legal capacity to enter into a binding contract in South Africa), and have a valid delivery address within our current Delivery Area.</p>
+        <p>You agree to provide accurate, current, and complete information when registering, and to update this information if it changes. You are responsible for maintaining the confidentiality of any login details associated with your account.</p>
+        <p>We reserve the right to decline or cancel a registration where the delivery address falls outside our current Delivery Area, or where information provided is incomplete or inaccurate.</p>
+
+        <h2 id="pricing">5. Subscription plans and pricing</h2>
+        <p>Subscription pricing is displayed in South African Rand (ZAR) and is inclusive of applicable taxes unless stated otherwise.</p>
+        <p>Subscriptions are billed on a recurring basis (monthly, in advance) via the payment method you provide.</p>
+        <p>We may change subscription pricing or tier contents from time to time. Where a price change affects an active subscriber, we will give reasonable prior notice (at least one full billing cycle) before the new price takes effect. Continuing your subscription after that notice period constitutes acceptance of the new price.</p>
+        <p>Business Client pricing is negotiated individually and is governed by the specific supply agreement or standing order confirmed between you and Home Harvest Network, which takes precedence over the general consumer pricing terms in this section.</p>
+
+        <h2 id="payment">6. Payment terms</h2>
+        <p>Accepted payment methods are published on our website and may include EFT, SnapScan, and other electronic payment methods as we introduce them.</p>
+        <p>Payment is collected in advance of each delivery cycle. If a scheduled payment fails or is not received, we reserve the right to pause or cancel the relevant delivery until payment is successfully received, as further described in section 9.6 below.</p>
+        <p>You are responsible for ensuring your payment details are current and that sufficient funds are available for recurring billing.</p>
+
+        <h2 id="delivery">7. Delivery</h2>
+        <p>We currently deliver only within our published Delivery Area. We do not offer national shipping or courier delivery; all deliveries are made directly by our own local delivery operation due to the perishable nature of our produce.</p>
+        <p>Delivery days and windows are communicated to you in advance (typically via WhatsApp or email) and may vary based on your location, route scheduling, and operational requirements.</p>
+        <p>You are responsible for providing a safe and accessible delivery location and for being available (or arranging safe receipt of your Box) at the scheduled delivery time. Home Harvest Network is not responsible for produce left unattended at your request, or for spoilage resulting from delayed collection after a successful delivery attempt.</p>
+        <p>If you need to change your delivery address, you must notify us with reasonable advance notice. We will do our best to accommodate address changes but cannot guarantee delivery to addresses outside our current Delivery Area.</p>
+
+        <h2 id="sourcing">8. Produce sourcing, quality, and substitutions</h2>
+        <p>All produce is sourced from independent household growers and, where applicable, informal traders within our network. Because this produce is grown seasonally and by many small, independent growers rather than industrial agriculture, natural variation in appearance, size, and exact contents from box to box should be expected.</p>
+        <p>Where a specific item advertised for a Box is unavailable due to seasonal or weather conditions, we may substitute a different item of equal or greater value. We aim to keep substitutions to a minimum and to keep the overall value of your Box consistent with your subscription tier.</p>
+        <p>We are committed to supplying goods that are safe, of good quality, and fit for their intended purpose, consistent with our obligations under the Consumer Protection Act 68 of 2008 ("CPA"). If any item does not meet this standard, please refer to section 9 below for how to report the issue and the remedy available to you.</p>
+
+        <h2 id="refunds-cancellations">9. Refunds and Cancellation Policy</h2>
+        <p>This section sets out our full Refund and Cancellation Policy. It explains how subscription cancellations, missed deliveries, and quality issues are handled, and should be read together with the rest of these Terms.</p>
+
+        <h3 id="refund-overview">9.1 Overview</h3>
+        <p>Because Home Harvest Network sells fresh, perishable produce rather than goods that can be returned and resold, this policy works a little differently to a typical retail returns policy. We've tried to make it fair, clear, and generous where it matters most — the quality of what actually arrives at your door.</p>
+        <p>In short:</p>
+        <ul>
+          <li>You can cancel your ongoing <strong>subscription</strong> at any time.</li>
+          <li>We cannot accept the <strong>return of produce that has already been delivered</strong>, for the reasons explained in section 9.3.</li>
+          <li>If something is <strong>wrong with your Box</strong> — poor quality, missing items, or damaged produce — we will make it right. See section 9.4.</li>
+        </ul>
+
+        <h3 id="refund-cancelling">9.2 Cancelling your subscription</h3>
+        <p>You may cancel your Box subscription at any time by contacting us via WhatsApp, email, or through your account on our website.</p>
+        <p>To avoid being charged for the next billing cycle, please cancel at least <strong>3 business days before your next scheduled payment date</strong>. If you cancel after this point, your subscription will remain active (and your next Box will still be delivered) for the cycle you have already paid for, and will then stop.</p>
+        <p>There is no minimum subscription term and no cancellation fee for consumer subscriptions.</p>
+        <p>Business Client standing orders are governed by the notice period agreed in your individual supply agreement, which may differ from the consumer notice period above.</p>
+
+        <h3 id="refund-returns">9.3 Our policy on returns of delivered produce</h3>
+        <p>Home Harvest Network's products are consumable, perishable fresh produce. Under South African law (including the Electronic Communications and Transactions Act), consumable goods of this nature are treated differently from most other online purchases, and are excluded from the standard cooling-off right to return goods for any reason after delivery.</p>
+        <p>In practice, this means that once a Box has been successfully delivered to you, we are unable to accept its physical return or offer a refund simply because you changed your mind. This is both a legal reality for perishable food products and a practical one — produce that has left our care cannot be safely resold.</p>
+        <p>This does <strong>not</strong> affect your right to cancel your ongoing subscription (section 9.2) or your right to a remedy for produce that does not meet the quality standard described in section 9.4.</p>
+
+        <h3 id="refund-quality">9.4 Quality guarantee</h3>
+        <p>We want every Box to meet a good standard of freshness and quality. If any part of your delivery does not — for example, produce that has arrived damaged, spoiled, significantly under-ripe or over-ripe beyond normal variation, or an item that was missing from your Box — please tell us within <strong>24 hours of delivery</strong>.</p>
+        <p>To report an issue, message us on WhatsApp or email with:</p>
+        <ul>
+          <li>Your name and delivery address</li>
+          <li>A short description of the issue</li>
+          <li>A photo of the affected produce, where possible</li>
+        </ul>
+        <p>Once we've confirmed the issue, we will offer one of the following, at your choice where practical:</p>
+        <ul>
+          <li><strong>Replacement</strong> of the affected item(s) in your next delivery, at no extra cost;</li>
+          <li><strong>Account credit</strong> applied to your next billing cycle; or</li>
+          <li><strong>Partial or full refund</strong> to your original payment method, depending on the extent of the issue.</li>
+        </ul>
+        <p>Refunds under this section are processed within <strong>7 business days</strong> of the issue being confirmed.</p>
+        <p>This quality guarantee reflects your rights under the CPA to receive goods that are safe, of good quality, and fit for their intended purpose. Nothing in this policy limits any right you have under that Act.</p>
+
+        <h3 id="refund-missed">9.5 Missed or failed deliveries</h3>
+        <p>If a scheduled delivery does not arrive on the expected day through our fault (for example, a missed collection, route, or packing error), please let us know within 24 hours. We will arrange a replacement delivery as soon as possible, or apply a credit to your account, at our discretion.</p>
+        <p>If a delivery cannot be completed because of incorrect address information, no safe or accessible place to leave the delivery, or unavailability at the agreed time despite reasonable delivery attempts, this will not be treated as a missed delivery for purposes of section 9.5, and standard billing will continue to apply.</p>
+
+        <h3 id="refund-payment-fail">9.6 Failed or missing payment</h3>
+        <p>If your scheduled subscription payment fails or is not received, we will notify you and give you an opportunity to make payment. If payment is still not received, your next delivery may be paused until payment is successfully made, and your subscription slot may be offered to another subscriber on our waitlist.</p>
+        <p>No refund is due for a delivery that did not occur because payment was not received.</p>
+
+        <h3 id="refund-how-paid">9.7 How refunds are paid</h3>
+        <p>Where a refund is due under this policy, it will be paid back to the original payment method used (EFT or SnapScan, as applicable), within the timeframe stated in the relevant section above, unless you and Home Harvest Network agree otherwise (for example, an account credit instead of a cash refund).</p>
+
+        <h3 id="refund-business">9.8 Business (B2B) clients</h3>
+        <p>Refunds, credits, and cancellation terms for Business Client standing orders are governed by the individual supply agreement in place between Home Harvest Network and the Business Client. Where that agreement is silent on a matter, the relevant principles in this policy will apply as a reasonable default.</p>
+
+        <h2 id="business">10. Business (B2B) accounts</h2>
+        <p>Business Clients receive produce under a standing-order arrangement, the specific terms of which (pricing, volume, delivery schedule, and payment terms) are agreed individually and recorded in writing between Home Harvest Network and the Business Client.</p>
+        <p>Where there is any conflict between these general Terms and a specific written agreement with a Business Client, the specific written agreement will prevail.</p>
+
+        <h2 id="growers">11. Growers and informal traders</h2>
+        <p>Independent growers and informal traders who supply produce into our network are governed by separate supplier agreements and are not "consumers" for purposes of these Terms or the CPA. Nothing in these Terms creates an employment, agency, or partnership relationship between Home Harvest Network and any Grower or trader.</p>
+
+        <h2 id="acceptable-use">12. Acceptable use</h2>
+        <p>You agree not to use our website or services for any unlawful purpose, to misrepresent your identity, to interfere with the proper functioning of our website, or to resell subscription Boxes to third parties without our written consent.</p>
+
+        <h2 id="ip">13. Intellectual property</h2>
+        <p>The Home Harvest Network name, logo, tagline, website content, and related branding are the property of Home Harvest Network (Pty) Ltd and may not be copied, reproduced, or used without our prior written permission.</p>
+
+        <h2 id="liability">14. Limitation of liability</h2>
+        <p>To the extent permitted by law, Home Harvest Network's liability for any claim arising from your subscription or use of our services is limited to the value of the relevant Box or order giving rise to the claim.</p>
+        <p>We are not liable for any illness, allergic reaction, or adverse health outcome arising from produce after it has been safely delivered to you, save where this results directly from our negligence or a failure to meet the quality standards described in section 8. Please inspect produce on receipt and take your own food safety precautions (washing, appropriate storage, and awareness of any personal allergies or dietary sensitivities).</p>
+        <p>Nothing in these Terms limits any right or remedy that cannot lawfully be excluded or limited under the CPA.</p>
+
+        <h2 id="indemnity">15. Indemnity</h2>
+        <p>You agree to indemnify Home Harvest Network against any loss or claim arising from your breach of these Terms, or from information you have provided to us that is false or misleading.</p>
+
+        <h2 id="privacy">16. Privacy and data protection</h2>
+        <p>We collect and use personal information (such as your name, delivery address, contact details, and payment confirmation details) in order to operate your subscription or business account. We handle this information in accordance with the Protection of Personal Information Act 4 of 2013 (POPIA) and our Privacy Policy.</p>
+        <p>We do not sell your personal information to third parties. Where we share information with growers or delivery personnel, this is limited to what is necessary to fulfil your order.</p>
+
+        <h2 id="changes">17. Changes to these terms</h2>
+        <p>We may update these Terms from time to time to reflect changes in our services, pricing, or legal requirements. The updated Terms will be published on this page with a revised "Last updated" date. Material changes affecting active subscribers will be communicated in advance as described in section 5.</p>
+
+        <h2 id="suspension">18. Suspension and termination</h2>
+        <p>We may suspend or terminate your account where you breach these Terms, where payment is not received, or where continuing to serve your delivery address is no longer operationally viable for us.</p>
+        <p>You may cancel your subscription at any time in accordance with section 9.</p>
+
+        <h2 id="governing-law">19. Governing law and jurisdiction</h2>
+        <p>These Terms are governed by the laws of the Republic of South Africa. Any dispute arising from these Terms will be subject to the jurisdiction of the South African courts, without prejudice to your right to refer a complaint to the National Consumer Commission or another applicable regulator.</p>
+
+        <h2 id="contact">20. Complaints and contact details</h2>
+        <p>If you have any complaint or question about these Terms — including any cancellation request, refund request, or quality issue under section 9 — please contact us at:</p>
+        <p><strong>Home Harvest Network (Pty) Ltd</strong><br>
+        Email: info@homeharvestnetwork.co.za<br>
+        Website: www.homeharvestnetwork.co.za</p>
+        <p>You can also reach us via our <a href="contact.html" style="text-decoration:underline;color:var(--green-dark);">contact page</a>. If a complaint is not resolved to your satisfaction, you have the right to refer it to the National Consumer Commission or another applicable industry ombudsman.</p>
+
+        <h2 id="general">21. General</h2>
+        <p>If any provision of these Terms is found to be unlawful or unenforceable, the remaining provisions will continue to apply.</p>
+        <p>These Terms, including the Refund and Cancellation Policy in section 9, together with our Privacy Policy, constitute the entire agreement between you and Home Harvest Network regarding your use of our services.</p>
+
+      </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container footer-wrap">
+      <div class="footer-logo">
+        <img src="photo%20rip/logo-bottom.png" alt="Home Harvest Network Logo">
+      </div>
+
+      <div class="footer-right">
+        © 2025 Home Harvest Network (Pty) Ltd · KwaZulu-Natal, South Africa · <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/mobile-nav.js"></script>
+</body>
+</html>
