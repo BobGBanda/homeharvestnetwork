@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms &amp; Conditions | Home Harvest Network</title>
+
+  <link rel="icon" type="image/png" href="photo%20rip/logo-banner.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --green: #5d8c51;
+      --green-dark: #2f4934;
+      --cream: #f7f3eb;
+      --sand: #ece4d6;
+      --text: #172019;
+      --muted: #667063;
+      --white: #ffffff;
+      --border: #ddd7ca;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1150px, 90%);
+      margin: auto;
+    }
+
+    /* NAV */
+
+    nav {
+      background: rgba(247, 243, 235, .95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-wrap {
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 10px 0;
+    }
+
+    .brand-nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: nowrap;
+      max-width: 420px;
+    }
+
+    .brand-text {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 100px;
+      width: auto;
+      display: block;
+    }
+
+    .brand-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(15px, 2.6vw, 25px);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      text-transform: uppercase;
+      margin: 0;
+      color: var(--green-dark);
+    }
+
+    .brand-title span {
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      color: var(--muted);
+      font-size: 15px;
+      align-items: center;
+    }
+
+    .nav-links a:hover {
+      color: var(--green-dark);
+    }
+
+    .nav-btn {
+      background: var(--green-dark);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* CONTENT */
+
+    .legal-section {
+      padding: 60px 0 90px;
+    }
+
+    .legal-header {
+      max-width: 760px;
+      margin-bottom: 40px;
+    }
+
+    h1.page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      color: var(--green-dark);
+      margin-bottom: 12px;
+    }
+
+    .updated {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .legal-body {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      min-width: 0; /* lets the grid column shrink instead of overflowing */
+    }
+
+    .legal-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--green-dark);
+      margin: 28px 0 10px;
+      scroll-margin-top: 100px; /* clears the site's own sticky top nav (~80px) when jumped to via the TOC */
+    }
+
+    .legal-body h2:first-child {
+      margin-top: 0;
+    }
+
+    .legal-body p,
+    .legal-body li {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .legal-body ul {
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+
+    /* SIDEBAR LAYOUT */
+
+    .legal-layout {
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* TABLE OF CONTENTS (sidebar) */
+
+    .legal-toc {
+      position: sticky;
+      top: 100px; /* sits just below the sticky site nav */
+      background: var(--sand);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px 24px;
+      max-height: calc(100vh - 130px);
+      overflow-y: auto;
+    }
+
+    .legal-toc h2 {
+      font-family: 'Inter', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin: 0 0 12px;
+    }
+
+    .legal-toc ol {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .legal-toc li {
+      font-size: 14px;
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+
+    .legal-toc a {
+      color: var(--green-dark);
+      border-bottom: 1px solid transparent;
+    }
+
+    .legal-toc a:hover {
+      border-bottom-color: var(--green);
+    }
+
+    @media (max-width: 900px) {
+      .legal-layout {
+        display: block;
+      }
+
+      .legal-toc {
+        position: static;
+        max-height: none;
+        margin-bottom: 24px;
+      }
+
+      .legal-toc ol {
+        columns: 2;
+        column-gap: 32px;
+      }
+
+      .legal-toc li {
+        break-inside: avoid;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .legal-toc ol {
+        columns: 1;
+      }
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 8px 0;
+      border-top: 1px solid var(--border);
+      background: var(--cream);
+    }
+
+    .footer-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      text-align: center;
+    }
+
+    .footer-logo img {
+      height: 300px;
+      width: auto;
+      display: block;
+      border-radius: 0;
+    }
+
+    .footer-right {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-right a {
+      color: var(--green-dark);
+      text-decoration: underline;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      h1.page-title {
+        font-size: 32px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .legal-body {
+        padding: 26px;
+      }
+
+    }
+
+  </style>
+  <link rel="stylesheet" href="css/mobile-nav.css">
+</head>
+<body>
+
+  <!-- NAV -->
+
+  <nav>
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand-nav">
+        <div class="logo">
+          <img src="photo%20rip/logo-banner.png" alt="Home Harvest Network Logo">
+        </div>
+        <div class="brand-text">
+          <h1 class="brand-title">
+            <span>Home</span>
+            <span>Harvest</span>
+            <span>Network</span>
+          </h1>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="subscriptions.html">Subscriptions</a>
+        <a href="for-growers.html">For Growers</a>
+        <a href="for-business.html">For Business</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <a href="subscriptions.html#subscribe" class="nav-btn">
+        Subscribe
+      </a>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+
+  <section class="legal-section">
+    <div class="container">
+
+      <div class="legal-header">
+        <h1 class="page-title">Terms &amp; Conditions</h1>
+        <p class="updated">Last updated: July 2026 · KwaZulu-Natal &amp; Western Cape, South Africa</p>
+      </div>
+
+      <div class="legal-layout">
+
+        <nav class="legal-toc" aria-label="Table of contents">
+          <h2>On this page</h2>
+          <ol>
+            <li><a href="#who-we-are">1. Who we are</a></li>
+            <li><a href="#subscriptions-billing">2. Subscriptions and billing</a></li>
+            <li><a href="#payments">3. Payments</a></li>
+            <li><a href="#cancellations">4. Cancellations and pauses</a></li>
+            <li><a href="#refunds">5. Refunds</a></li>
+            <li><a href="#delivery">6. Delivery</a></li>
+            <li><a href="#produce-sourcing">7. Produce sourcing</a></li>
+            <li><a href="#growers-business">8. For Growers and For Business</a></li>
+            <li><a href="#privacy">9. Privacy</a></li>
+            <li><a href="#liability">10. Limitation of liability</a></li>
+            <li><a href="#governing-law">11. Governing law</a></li>
+            <li><a href="#changes">12. Changes to these terms</a></li>
+            <li><a href="#contact">13. Contact us</a></li>
+          </ol>
+        </nav>
+
+        <div class="legal-body">
+
+        <h2 id="who-we-are">1. Who we are</h2>
+        <p>Home Harvest Network ("we", "us", "our") connects local growers with households and businesses across KwaZulu-Natal and the Western Cape, and coordinates the collection, packaging, and delivery of fresh produce boxes. By subscribing to a produce box or otherwise using our services, you agree to these Terms &amp; Conditions.</p>
+
+        <h2 id="subscriptions-billing">2. Subscriptions and billing</h2>
+        <p>When you subscribe, you choose a box size (Mini, Family, or Premium), a delivery frequency (weekly or monthly), and a billing method:</p>
+        <ul>
+          <li><strong>Recurring billing:</strong> you authorise us, via our payment processor PayFast, to automatically charge your selected card at the start of each delivery cycle until you cancel.</li>
+          <li><strong>Pay-per-delivery:</strong> you approve and pay for each delivery individually before it is dispatched.</li>
+        </ul>
+        <p>Prices are shown in South African Rand (ZAR) and may be updated from time to time. We will give reasonable notice before any price change takes effect on an active subscription.</p>
+
+        <h2 id="payments">3. Payments</h2>
+        <p>All online payments are processed securely by PayFast, a licensed South African payment gateway. We do not store your card details. Payments can be made by Visa or Mastercard debit or credit card. We do not have access to your banking credentials at any point in this process.</p>
+
+        <h2 id="cancellations">4. Cancellations and pauses</h2>
+        <p>You may cancel or pause a recurring subscription at any time by contacting us before your next billing date; changes take effect from the next delivery cycle. Once a delivery cycle has been charged and produce has been sourced on your behalf, that cycle is non-refundable, except as set out below.</p>
+
+        <h2 id="refunds">5. Refunds</h2>
+        <p>If a delivery is missed, significantly delayed, or arrives with produce that does not meet reasonable quality expectations, contact us within 48 hours of the scheduled delivery and we will offer a replacement, credit toward your next box, or a refund for that delivery, at our discretion.</p>
+
+        <h2 id="delivery">6. Delivery</h2>
+        <p>Delivery is currently available within our supported KwaZulu-Natal and Western Cape delivery areas. We will confirm whether your suburb is covered when you subscribe. Delivery days and times may vary slightly depending on harvest schedules and grower availability.</p>
+
+        <h2 id="produce-sourcing">7. Produce sourcing</h2>
+        <p>Produce is sourced seasonally from local growers within our network. Exact contents of each box may vary week to week depending on availability, weather, and harvest conditions. Substitutions of similar value may be made where a specific item is unavailable.</p>
+
+        <h2 id="growers-business">8. For Growers and For Business</h2>
+        <p>Separate arrangements apply to growers supplying produce through our network and to businesses (restaurants, schools, corporate canteens) receiving standing orders. These are agreed individually and are not covered by the household subscription terms above.</p>
+
+        <h2 id="privacy">9. Privacy</h2>
+        <p>We collect and process personal information (such as your name, contact details, and delivery address) solely to fulfil your subscription and communicate with you about it, in line with the Protection of Personal Information Act (POPIA). We do not sell your personal information to third parties.</p>
+
+        <h2 id="liability">10. Limitation of liability</h2>
+        <p>To the maximum extent permitted by law, Home Harvest Network's liability for any claim arising from a subscription is limited to the amount paid for the affected delivery. We are not liable for indirect or consequential losses. Nothing in these terms limits any liability that cannot lawfully be excluded under South African law, including the Consumer Protection Act.</p>
+
+        <h2 id="governing-law">11. Governing law</h2>
+        <p>These Terms &amp; Conditions are governed by the laws of the Republic of South Africa, and any disputes will be subject to the jurisdiction of the South African courts.</p>
+
+        <h2 id="changes">12. Changes to these terms</h2>
+        <p>We may update these Terms &amp; Conditions from time to time. Continued use of our services after an update constitutes acceptance of the revised terms.</p>
+
+        <h2 id="contact">13. Contact us</h2>
+        <p>Questions about these terms, your subscription, or a payment can be sent to us via our <a href="contact.html" style="text-decoration:underline;color:var(--green-dark);">contact page</a>.</p>
+
+      </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container footer-wrap">
+      <div class="footer-logo">
+        <img src="photo%20rip/logo-bottom.png" alt="Home Harvest Network Logo">
+      </div>
+
+      <div class="footer-right">
+        © 2026 Home Harvest Network · KwaZulu-Natal, South Africa · <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/mobile-nav.js"></script>
+</body>
+</html>
