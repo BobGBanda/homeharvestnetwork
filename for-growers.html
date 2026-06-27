@@ -313,6 +313,71 @@
       background: #4db34c;
     }
 
+    /* TESTIMONIAL GALLERY */
+
+    .testimonial-gallery {
+      margin-top: 28px;
+      background: linear-gradient(180deg, #f3efe6 0%, #efe8db 100%);
+      border: 1px solid rgba(93, 140, 81, 0.14);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 18px 40px rgba(23, 32, 25, 0.05);
+    }
+
+    .testimonial-gallery .eyebrow {
+      color: var(--green);
+    }
+
+    .testimonial-gallery h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 3vw, 34px);
+      color: var(--green-dark);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-gallery > p {
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 22px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid rgba(93, 140, 81, 0.12);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(23, 32, 25, 0.06);
+    }
+
+    .testimonial-card button {
+      all: unset;
+      display: block;
+      cursor: zoom-in;
+      width: 100%;
+    }
+
+    .testimonial-card img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 0;
+    }
+
+    .testimonial-card figcaption {
+      padding: 10px 12px 12px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
     /* FOOTER */
 
     footer {
@@ -351,6 +416,10 @@
         grid-template-columns: 1fr;
       }
 
+      .testimonial-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .cta-inputs {
         grid-template-columns: 1fr;
         max-width: none;
@@ -365,6 +434,79 @@
         font-size: 36px;
       }
 
+      .testimonial-gallery {
+        padding: 22px;
+      }
+
+    }
+
+    @media (max-width: 560px) {
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(12, 18, 13, 0.86);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 999;
+    }
+
+    .lightbox.is-open {
+      display: flex;
+    }
+
+    .lightbox-panel {
+      position: relative;
+      width: min(1100px, 96vw);
+      max-height: 92vh;
+      display: grid;
+      gap: 12px;
+    }
+
+    .lightbox-image-wrap {
+      background: #111;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.35);
+    }
+
+    .lightbox-image-wrap img {
+      width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: 0;
+      background: #111;
+    }
+
+    .lightbox-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 14px;
+    }
+
+    .lightbox-close {
+      appearance: none;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.08);
+      color: white;
+      border-radius: 999px;
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 22px;
+      line-height: 1;
     }
 
   </style>
@@ -374,7 +516,7 @@
 
   <nav>
     <div class="container nav-wrap">
-      <div class="brand-nav">
+      <a href="index.html" class="brand-nav">
         <div class="logo">
           <img src="photo%20rip/logo-banner.png" alt="Home Harvest Network Logo">
         </div>
@@ -385,7 +527,7 @@
             <span>Network</span>
           </h1>
         </div>
-      </div>
+      </a>
 
       <div class="nav-links">
         <a href="index.html">Home</a>
@@ -481,6 +623,170 @@
         </form>
       </div>
     </div>
+
+    <!-- TESTIMONIAL GALLERY -->
+    <section class="testimonial-gallery" aria-labelledby="garden-testimonials-heading">
+      <span class="eyebrow">Garden Testimonials Gallery</span>
+      <h2 id="garden-testimonials-heading">Real gardens, Real growth, Real proof!</h2>
+      <p>
+        These garden photos show the spaces we work with and the kind of care, consistency, and yield-focused support
+        Home Harvest Network brings to each grower partnership.
+      </p>
+
+      <div class="testimonial-grid">
+        </figure>
+        <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3349_2.webp" data-alt="Carefully managed plot with strong natural light.">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3349_2.webp" alt="Carefully managed plot with strong natural light." decoding="async">
+          </button>
+          <figcaption>Carefully managed plot with strong natural light.</figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3329.webp" data-alt="A working garden setup with consistent care.">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3329.webp" alt="A working garden setup with consistent care." decoding="async">
+          </button>
+          <figcaption>A working garden setup with consistent care.</figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3348.webp" data-alt="Well-positioned beds for daily garden work.">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3348.webp" alt="Well-positioned beds for daily garden work." decoding="async">
+          </button>
+          <figcaption>Well-positioned beds for daily garden work.</figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3344.webp" data-alt="Fresh, healthy growth with a practical layout.">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3344.webp" alt="Fresh, healthy growth with a practical layout." decoding="async">
+          </button>
+          <figcaption>Fresh, healthy growth with a practical layout.</figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3321.webp" data-alt="Freshly tended garden beds with strong potential.">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3321.webp" alt="Freshly tended garden beds with strong potential." decoding="async">
+          </button>
+          <figcaption>Freshly tended garden beds with strong potential.</figcaption>
+        </figure>
+                <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3322.webp" data-alt="Practical garden setup designed for local production.">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3322.webp" alt="Practical garden setup designed for local production." decoding="async">
+          </button>
+          <figcaption>Practical garden setup designed for local production.</figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3325.webp" data-alt="Growing area with space for steady crop cycles.">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3325.webp" alt="Growing area with space for steady crop cycles." decoding="async">
+          </button>
+          <figcaption>Growing area with space for steady crop cycles.</figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3317.webp" data-alt="Growing space with room for productive seasonal planting.">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3317.webp" alt="Growing space with room for productive seasonal planting." decoding="async">
+          </button>
+          <figcaption>Growing space with room for productive seasonal planting.</figcaption>
+        </figure>
+        <!--
+        <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3294.webp" data-alt="Healthy planting space and early-stage crop rows.">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3294.webp" alt="Healthy planting space and early-stage crop rows." fetchpriority="high" decoding="async">
+          </button>
+          <figcaption>Healthy planting space and early-stage crop rows.</figcaption>
+        </figure>
+            <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3302.webp" data-alt="A productive garden layout with strong sunlight access.">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3302.webp" alt="A productive garden layout with strong sunlight access." decoding="async">
+          </button>
+          <figcaption>A productive garden layout with strong sunlight access.</figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3295.webp" data-alt="Garden testimonial photo 2">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3295.webp" alt="Garden testimonial photo 2" decoding="async">
+          </button>
+          <figcaption>Active growing beds ready for structured harvesting.</figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3314.webp" data-alt="Garden testimonial photo 4">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3314.webp" alt="Garden testimonial photo 4" decoding="async">
+          </button>
+          <figcaption>Well-kept growing area prepared for ongoing support.</figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3315.webp" data-alt="Garden testimonial photo 5">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3315.webp" alt="Garden testimonial photo 5" decoding="async">
+          </button>
+          <figcaption>Focused garden management and reliable crop development.</figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3319.webp" data-alt="Garden testimonial photo 7">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3319.webp" alt="Garden testimonial photo 7" decoding="async">
+          </button>
+          <figcaption>A garden plot showing consistent maintenance and growth.</figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3326.webp" data-alt="Garden testimonial photo 11">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3326.webp" alt="Garden testimonial photo 11" decoding="async">
+          </button>
+          <figcaption>Neat planting space and visible crop structure.</figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3331.webp" data-alt="Garden testimonial photo 13">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3331.webp" alt="Garden testimonial photo 13" decoding="async">
+          </button>
+          <figcaption>Healthy growth conditions in a local backyard garden.</figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3336.webp" data-alt="Garden testimonial photo 14">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3336.webp" alt="Garden testimonial photo 14" decoding="async">
+          </button>
+          <figcaption>Productive growing space with good crop density.</figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3337.webp" data-alt="Garden testimonial photo 15">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3337.webp" alt="Garden testimonial photo 15" decoding="async">
+          </button>
+          <figcaption>Garden rows supporting dependable harvests.</figcaption>
+        <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3342.webp" data-alt="Garden testimonial photo 17">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3342.webp" alt="Garden testimonial photo 17" decoding="async">
+          </button>
+          <figcaption>A stable growing area ready for the next cycle.</figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3343.webp" data-alt="Garden testimonial photo 18">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3343.webp" alt="Garden testimonial photo 18" decoding="async">
+          </button>
+          <figcaption>Visible crop progress in a community garden setting.</figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3352.webp" data-alt="Garden testimonial photo 21">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3352.webp" alt="Garden testimonial photo 21" decoding="async">
+          </button>
+          <figcaption>A productive planting area with good structure.</figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3354.webp" data-alt="Garden testimonial photo 22">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3354.webp" alt="Garden testimonial photo 22" decoding="async">
+          </button>
+          <figcaption>Consistent garden upkeep and healthy field presence.</figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <button type="button" class="lightbox-trigger" data-full="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3357.webp" data-alt="Garden testimonial photo 23">
+            <img src="photo%20rip/Garden%20photos%20-%20testimonials-webp/IMG_3357.webp" alt="Garden testimonial photo 23" decoding="async">
+          </button>
+          <figcaption>Strong local growing conditions and visible yield potential.</figcaption>
+        </figure>-->
+      </div>
+    </section>
+  </div>
+
+  <div class="lightbox" id="garden-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Garden photo preview">
+    <div class="lightbox-panel" role="document">
+      <div class="lightbox-meta">
+        <span id="lightbox-caption">Garden photo preview</span>
+        <button type="button" class="lightbox-close" aria-label="Close preview">&times;</button>
+      </div>
+      <div class="lightbox-image-wrap">
+        <img id="lightbox-image" alt="">
+      </div>
+    </div>
   </div>
 
   <!-- FOOTER -->
@@ -500,5 +806,49 @@
   <script src="js/supabase-config.js"></script>
   <script src="js/mobile-nav.js"></script>
   <script src="js/leads.js"></script>
+  <script>
+    (function () {
+      const lightbox = document.getElementById('garden-lightbox');
+      const lightboxImage = document.getElementById('lightbox-image');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      const closeButton = document.querySelector('.lightbox-close');
+      const triggers = document.querySelectorAll('.lightbox-trigger');
+      let lastFocus = null;
+
+      function closeLightbox() {
+        if (!lightbox.classList.contains('is-open')) return;
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (lastFocus) lastFocus.focus();
+      }
+
+      function openLightbox(src, alt, trigger) {
+        lastFocus = trigger;
+        lightboxImage.src = src;
+        lightboxImage.alt = alt || 'Garden photo preview';
+        lightboxCaption.textContent = alt || 'Garden photo preview';
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        closeButton.focus();
+      }
+
+      triggers.forEach((trigger) => {
+        trigger.addEventListener('click', () => {
+          openLightbox(trigger.dataset.full, trigger.dataset.alt, trigger);
+        });
+      });
+
+      closeButton.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
 </body>
 </html>
