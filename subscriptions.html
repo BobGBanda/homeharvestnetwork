@@ -149,35 +149,21 @@
     }
 
     .eyebrow {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Inter', sans-serif;
       text-transform: uppercase;
       letter-spacing: 3px;
       color: var(--green);
-      font-size: 55px;
+      font-size: 14px;
       font-weight: 700;
-      margin-bottom: 28px;
-      width: 100%;
-      text-align: center;
-      align-items: center;
+      margin-bottom: 16px;
     }
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 60px;
-      line-height: 1.05;
-      margin-bottom: 28px;
+      font-size: 48px;
+      line-height: 1.1;
+      margin-bottom: 20px;
       color: var(--green-dark);
-      align-items: top;
-      
-    }
-    H2{
-      font-family:'Playfair Display',serif;
-      font-size:44px;
-      margin-bottom:8px;
-      MAX-WIDTH:95%;
-      color:var(--green-dark);
-      text-align: center;
-      align-items: center;
     }
     .hero p {
       color: var(--muted);
@@ -194,7 +180,7 @@
 
     .hero-image img {
       width: 100%;
-      height: 90%;
+      height: 100%;
       object-fit: cover;
     }
 
@@ -280,6 +266,111 @@
       font-size: 15px;
     }
 
+    /* CHECKOUT */
+
+    .checkout-section {
+      background: white;
+    }
+
+    .checkout-form {
+      max-width: 800px;
+      margin-top: 24px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 34px;
+    }
+
+    .checkout-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .checkout-grid label,
+    .terms-check {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--green-dark);
+    }
+
+    .checkout-grid label.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .checkout-grid input,
+    .checkout-grid select {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text);
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: white;
+    }
+
+    .billing-mode {
+      grid-column: 1 / -1;
+    }
+
+    .radio-row {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 400;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .terms-check {
+      flex-direction: row;
+      align-items: center;
+      margin-top: 24px;
+      font-weight: 400;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .terms-check a {
+      text-decoration: underline;
+      color: var(--green-dark);
+    }
+
+    .checkout-form button {
+      margin-top: 22px;
+      background: var(--green-dark);
+      color: white;
+      border: none;
+      padding: 15px 26px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .payment-note {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 700px) {
+      .checkout-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* FOOTER */
 
     footer {
@@ -307,6 +398,11 @@
     .footer-right {
       color: var(--muted);
       font-size: 14px;
+    }
+
+    .footer-right a {
+      color: var(--green-dark);
+      text-decoration: underline;
     }
 
     /* MOBILE */
@@ -360,8 +456,8 @@
         <a href="contact.html">Contact</a>
       </div>
 
-      <a href="index.html#waitlist" class="nav-btn">
-        Join Waitlist
+      <a href="#subscribe" class="nav-btn">
+        Subscribe
       </a>
     </div>
   </nav>
@@ -372,13 +468,13 @@
 
     <div class="container">
 
-      <div class="eyebrow">
-        Fresh local produce
-      </div>
-
       <div class="hero-grid">
 
         <div>
+
+          <div class="eyebrow">
+            Fresh local produce
+          </div>
 
           <h1>
             Subscribe to locally grown deliveries
@@ -414,7 +510,7 @@
       </h2>
 
       <p class="section-sub">
-        Find the perfect produce box for your household. Choose the size that suits your family and cooking style, then enjoy fresh, seasonal produce delivered to your door every two weeks.
+        Choose a produce box that fits your household, delivery rhythm, and cooking habits.
       </p>
 
       <div class="plans">
@@ -428,19 +524,18 @@
           </p>
 
           <ul>
-      <!--Weekly or bi-weekly delivery-->
 			<li>Ideal for 1–2 people</li>
-			<li>4–5 seasonal items</li>
-      <li>•	Bunch of spinach</li>
-      <li>•	4 medium tomatoes</li>
-      <li>•	4 onions</li>
-      <li>•	4 potatoes</li>
-      <li>•	4 carrot</li>
+			<li>4–5 seasonal items, including:</li>
+			<li>• Bunch of spinach</li>
+			<li>• 4 medium tomatoes</li>
+			<li>• 4 onions</li>
+			<li>• 4 potatoes</li>
+			<li>• 4 carrots</li>
           </ul>
 
-          <button type="button" data-payfast-plan="Mini Box">
-            Subscribe to Mini
-          </button>
+          <a href="#subscribe" data-box-choice="Mini Box">
+            Choose Mini
+          </a>
         </div>
 
         <div class="plan">
@@ -453,19 +548,20 @@
           </p>
 
           <ul>
-            <!--Weekly deliveries-->
+            <li>Ideal for families</li>
             <li>Easy online plan management</li>
-            <li>Balanced produce mix namely;</li>
-            <li>•	Bunch of Spinach</li>
-            <li>•	8 Potato’s</li>
-            <li>•	4 Onion</li>
-            <li>•	Half Cabbage</li>
-            <li>•	6 Carrot</li>
-            <li>•	4 tomatoes</li>
+            <li>Balanced produce mix, including:</li>
+            <li>• Bunch of spinach</li>
+            <li>• 8 potatoes</li>
+            <li>• 4 onions</li>
+            <li>• Half cabbage</li>
+            <li>• 6 carrots</li>
+            <li>• 4 tomatoes</li>
           </ul>
-          <button type="button" data-payfast-plan="Family Box">
-            Subscribe to Family
-          </button>
+
+          <a href="#subscribe" data-box-choice="Family Box">
+            Choose Family
+          </a>
         </div>
 
         <div class="plan">
@@ -478,21 +574,31 @@
           </p>
 
           <ul>
-      <li>Includes premium produce</li>
+			<li>Includes premium produce</li>
 			<li>Best for larger households</li>
-			<li>12–15 seasonal items namely;</li>
-      <li>•	Bunch of spinach</li>
-      <li>•	Full head cabbage</li>
-      <li>•	8 medium tomatoes</li>
-      <li>•	8 carrots</li>
-      <li>•	6 onions</li>
-      <li>•	10 potatoes</li>
-      <li>•	4 betroot</li>
-      <li>•	2 butternut</li>
+			<li>12–15 seasonal items, including:</li>
+			<li>• Bunch of spinach</li>
+			<li>• Full head of cabbage</li>
+			<li>• 8 medium tomatoes</li>
+			<li>• 8 carrots</li>
+			<li>• 6 onions</li>
+			<li>• 10 potatoes</li>
+			<li>• 4 beetroot</li>
+			<li>• 2 butternut</li>
           </ul>
           <button type="button" data-payfast-plan="Premium Box">
             Subscribe to Premium
           </button>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+          <a href="#subscribe" data-box-choice="Premium Box">
+			  Choose Premium
+		  </a>
         </div>
       </div>
 
@@ -550,6 +656,98 @@
 
   </section>
 
+  <!-- CHECKOUT / SUBSCRIBE -->
+
+  <section class="checkout-section" id="subscribe">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Subscribe now
+      </h2>
+
+      <p class="section-sub">
+        Pay securely by debit or credit card via PayFast. Choose recurring billing so we bill you automatically each cycle, or pay-per-delivery if you'd rather approve each payment yourself.
+      </p>
+
+      <form class="checkout-form" data-checkout-form>
+
+        <div class="checkout-grid">
+
+          <label>
+            Box
+            <select name="plan" required>
+              <option value="">Choose a box</option>
+              <option value="Mini Box">Mini Box</option>
+              <option value="Family Box">Family Box</option>
+              <option value="Premium Box">Premium Box</option>
+            </select>
+          </label>
+
+          <label>
+            Delivery frequency
+            <select name="frequency" required>
+              <option value="">Choose frequency</option>
+              <option value="weekly">Weekly</option>
+              <option value="monthly">Monthly</option>
+            </select>
+          </label>
+
+          <label class="billing-mode">
+            Billing
+            <div class="radio-row">
+              <label class="radio-option">
+                <input type="radio" name="billing_mode" value="recurring" checked>
+                Recurring (auto-billed each cycle)
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="billing_mode" value="once_off">
+                Pay per delivery (once-off each time)
+              </label>
+            </div>
+          </label>
+
+          <label>
+            Full name
+            <input name="name" type="text" placeholder="Your full name" required>
+          </label>
+
+          <label>
+            Email address
+            <input name="email" type="email" placeholder="you@example.com" required>
+          </label>
+
+          <label>
+            Phone number
+            <input name="phone" type="tel" placeholder="082 000 0000" required>
+          </label>
+
+          <label class="full-width">
+            Delivery suburb / area
+            <input name="suburb" type="text" placeholder="Suburb, city" required>
+          </label>
+
+        </div>
+
+        <label class="terms-check">
+          <input type="checkbox" name="agree_terms" required>
+          I agree to the <a href="terms.html" target="_blank">Terms &amp; Conditions</a>
+        </label>
+
+        <button type="submit">
+          Continue to secure payment
+        </button>
+
+        <p class="payment-note">
+          You'll be redirected to PayFast to complete payment by debit or credit card.
+        </p>
+
+      </form>
+
+    </div>
+
+  </section>
+
   <!-- FOOTER -->
 
   <footer>
@@ -559,13 +757,14 @@
       </div>
 
       <div class="footer-right">
-        © 2025 Home Harvest Network · KwaZulu-Natal, South Africa
+        © 2026 Home Harvest Network · KwaZulu-Natal, South Africa · <a href="terms.html">Terms &amp; Conditions</a>
       </div>
     </div>
   </footer>
 
-  <script src="js/mobile-nav.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/supabase-config.js"></script>
-  <script src="js/payfast-checkout.js"></script>
+  <script src="js/mobile-nav.js"></script>
+  <script src="js/checkout.js"></script>
 </body>
 </html>

@@ -4,12 +4,12 @@ import { createHash } from "node:crypto";
 // ---- Prices are decided HERE, never trusted from the browser. ----
 // Edit these to your real prices (ZAR). Keys are "Plan name|frequency".
 const PRICING: Record<string, number> = {
-  "Mini Box|weekly": 149,
-  "Mini Box|monthly": 549,
-  "Family Box|weekly": 249,
-  "Family Box|monthly": 899,
-  "Premium Box|weekly": 349,
-  "Premium Box|monthly": 1299,
+  "Mini Box|weekly": 120,
+  "Mini Box|monthly": 240,
+  "Family Box|weekly": 220,
+  "Family Box|monthly": 440,
+  "Premium Box|weekly": 350,
+  "Premium Box|monthly": 700,
 };
 
 // PayFast frequency codes: 1 Daily, 2 Weekly, 3 Monthly, 4 Quarterly, 5 Biannual, 6 Annual
@@ -75,6 +75,9 @@ Deno.serve(async (request) => {
   const email = String(body.email || "").trim();
   const phone = String(body.phone || "").trim();
   const suburb = String(body.suburb || "").trim();
+  // "recurring" = PayFast auto-bills every cycle on its own.
+  // "once_off"  = a single payment now; the merchant sends a fresh link each cycle.
+  const billingMode = body.billingMode === "once_off" ? "once_off" : "recurring";
 
   const priceKey = `${plan}|${frequency}`;
   const amount = PRICING[priceKey];
@@ -119,6 +122,7 @@ Deno.serve(async (request) => {
     m_payment_id: mPaymentId,
     plan,
     billing_frequency: frequency,
+    billing_mode: billingMode,
     amount,
     name,
     email,
@@ -154,10 +158,25 @@ Deno.serve(async (request) => {
     ["amount", amount.toFixed(2)],
     ["item_name", `${plan} subscription (${frequency})`],
     ["item_description", `Home Harvest Network ${plan}, billed ${frequency}`],
-    ["subscription_type", "1"],
-    ["recurring_amount", amount.toFixed(2)],
-    ["frequency", frequencyCode],
-    ["cycles", "0"], // 0 = bill until the customer cancels
+    // Recurring billing can ONLY use tokenised card payments — PayFast has
+    // no way to auto-bill future cycles via EFT, so "cc" is mandatory here
+    // regardless of account settings.
+    // Once-off payments have no such restriction, so we leave payment_method
+    // unset for them, which shows every method including Instant EFT. This
+    // also works as a diagnostic: if once-off still gets rejected, the
+    // PayFast account itself isn't verified yet (not a subscriptions-only
+    // issue) — see PAYFAST-DIAGNOSTIC.md.
+    ...(billingMode === "recurring" ? ([["payment_method", "cc"]] as [string, string][]) : []),
+    // Recurring billing only applies fields PayFast needs for subscriptions.
+    // Once-off payments omit these entirely — PayFast just charges once.
+    ...(billingMode === "recurring"
+      ? ([
+          ["subscription_type", "1"],
+          ["recurring_amount", amount.toFixed(2)],
+          ["frequency", frequencyCode],
+          ["cycles", "0"], // 0 = bill until the customer cancels
+        ] as [string, string][])
+      : []),
   ];
 
   const signature = buildSignedFields(orderedFields, passphrase);
