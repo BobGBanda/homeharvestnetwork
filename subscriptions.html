@@ -168,13 +168,22 @@
       margin-bottom: 28px;
       color: var(--green-dark);
       align-items: top;
+      
     }
-
+    H2{
+      font-family:'Playfair Display',serif;
+      font-size:44px;
+      margin-bottom:8px;
+      MAX-WIDTH:95%;
+      color:var(--green-dark);
+      text-align: center;
+      align-items: center;
+    }
     .hero p {
       color: var(--muted);
       font-size: 18px;
       margin-bottom: 24px;
-      max-width: 580px;
+      max-width: 95%;
     }
 
     .hero-image {
@@ -195,20 +204,6 @@
       padding: 50px 0;
     }
 
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 44px;
-      margin-bottom: 8px;
-      color: var(--green-dark);
-    }
-
-    .section-sub {
-      color: var(--muted);
-      max-width: 700px;
-      margin-bottom: 36px;
-      font-size: 17px;
-    }
-
     .plans {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -227,6 +222,7 @@
       font-size: 22px;
       margin-bottom: 14px;
       color: var(--green-dark);
+      
     }
 
     .plan p {
@@ -337,7 +333,6 @@
   <link rel="stylesheet" href="css/mobile-nav.css">
 </head>
 <body>
-<!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5M2VQ3QX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
 
   <!-- NAV -->
 
@@ -419,7 +414,7 @@
       </h2>
 
       <p class="section-sub">
-        Choose a produce box that fits your household, delivery rhythm, and cooking habits.
+        Find the perfect produce box for your household. Choose the size that suits your family and cooking style, then enjoy fresh, seasonal produce delivered to your door every two weeks.
       </p>
 
       <div class="plans">
@@ -433,14 +428,19 @@
           </p>
 
           <ul>
-			<li>4–5 seasonal items</li>
+      <!--Weekly or bi-weekly delivery-->
 			<li>Ideal for 1–2 people</li>
-			<li>Weekly or bi-weekly delivery</li>
+			<li>4–5 seasonal items</li>
+      <li>•	Bunch of spinach</li>
+      <li>•	4 medium tomatoes</li>
+      <li>•	4 onions</li>
+      <li>•	4 potatoes</li>
+      <li>•	4 carrot</li>
           </ul>
 
-          <a href="index.html?box=Mini%20Box#waitlist" data-box-choice="Mini Box">
-            Choose Mini
-          </a>
+          <button type="button" data-payfast-plan="Mini Box">
+            Subscribe to Mini
+          </button>
         </div>
 
         <div class="plan">
@@ -453,14 +453,19 @@
           </p>
 
           <ul>
-            <li>Weekly deliveries</li>
-            <li>Balanced produce mix</li>
+            <!--Weekly deliveries-->
             <li>Easy online plan management</li>
+            <li>Balanced produce mix namely;</li>
+            <li>•	Bunch of Spinach</li>
+            <li>•	8 Potato’s</li>
+            <li>•	4 Onion</li>
+            <li>•	Half Cabbage</li>
+            <li>•	6 Carrot</li>
+            <li>•	4 tomatoes</li>
           </ul>
-
-          <a href="index.html?box=Family%20Box#waitlist" data-box-choice="Family Box">
-            Choose Family
-          </a>
+          <button type="button" data-payfast-plan="Family Box">
+            Subscribe to Family
+          </button>
         </div>
 
         <div class="plan">
@@ -473,14 +478,21 @@
           </p>
 
           <ul>
-			<li>12–15 seasonal items</li>
-			<li>Includes premium produce</li>
+      <li>Includes premium produce</li>
 			<li>Best for larger households</li>
+			<li>12–15 seasonal items namely;</li>
+      <li>•	Bunch of spinach</li>
+      <li>•	Full head cabbage</li>
+      <li>•	8 medium tomatoes</li>
+      <li>•	8 carrots</li>
+      <li>•	6 onions</li>
+      <li>•	10 potatoes</li>
+      <li>•	4 betroot</li>
+      <li>•	2 butternut</li>
           </ul>
-
-          <a href="index.html?box=Premium%20Box#waitlist" data-box-choice="Premium Box">
-			  Choose Premium
-		  </a>
+          <button type="button" data-payfast-plan="Premium Box">
+            Subscribe to Premium
+          </button>
         </div>
       </div>
 
@@ -553,6 +565,7 @@
   </footer>
 
   <script src="js/mobile-nav.js"></script>
-  <script src="js/waitlist-box-choice.js"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/payfast-checkout.js"></script>
 </body>
 </html>
