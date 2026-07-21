@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-5M2VQ3QX");</script><!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Subscriptions | Home Harvest Network</title>
@@ -165,11 +164,12 @@
       margin-bottom: 20px;
       color: var(--green-dark);
     }
+
     .hero p {
       color: var(--muted);
       font-size: 18px;
       margin-bottom: 24px;
-      max-width: 95%;
+      max-width: 580px;
     }
 
     .hero-image {
@@ -190,6 +190,20 @@
       padding: 50px 0;
     }
 
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 44px;
+      margin-bottom: 8px;
+      color: var(--green-dark);
+    }
+
+    .section-sub {
+      color: var(--muted);
+      max-width: 700px;
+      margin-bottom: 36px;
+      font-size: 17px;
+    }
+
     .plans {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -208,7 +222,6 @@
       font-size: 22px;
       margin-bottom: 14px;
       color: var(--green-dark);
-      
     }
 
     .plan p {
@@ -273,12 +286,13 @@
     }
 
     .checkout-form {
-      max-width: 800px;
+      max-width: 95%;
       margin-top: 24px;
       background: var(--cream);
       border: 1px solid var(--border);
       border-radius: 20px;
       padding: 34px;
+      align-items: center;
     }
 
     .checkout-grid {
@@ -566,39 +580,30 @@
 
         <div class="plan">
           <h3>
-			Premium Box
-		  </h3>
+          Premium Box
+          </h3>
 
           <p>
             Ideal for home cooks and small businesses looking for a curated selection of flavourful ingredients.
           </p>
 
-          <ul>
-			<li>Includes premium produce</li>
-			<li>Best for larger households</li>
-			<li>12–15 seasonal items, including:</li>
-			<li>• Bunch of spinach</li>
-			<li>• Full head of cabbage</li>
-			<li>• 8 medium tomatoes</li>
-			<li>• 8 carrots</li>
-			<li>• 6 onions</li>
-			<li>• 10 potatoes</li>
-			<li>• 4 beetroot</li>
-			<li>• 2 butternut</li>
-          </ul>
-          <button type="button" data-payfast-plan="Premium Box">
-            Subscribe to Premium
-          </button>
-        </div>
-      </div>
-
-    </div>
-
-  </section>
+            <ul>
+          <li>Includes premium produce</li>
+          <li>Best for larger households</li>
+          <li>12–15 seasonal items, including:</li>
+          <li>• Bunch of spinach</li>
+          <li>• Full head of cabbage</li>
+          <li>• 8 medium tomatoes</li>
+          <li>• 8 carrots</li>
+          <li>• 6 onions</li>
+          <li>• 10 potatoes</li>
+          <li>• 4 beetroot</li>
+          <li>• 2 butternut</li>
+              </ul>
 
           <a href="#subscribe" data-box-choice="Premium Box">
-			  Choose Premium
-		  </a>
+            Choose Premium
+          </a>
         </div>
       </div>
 
