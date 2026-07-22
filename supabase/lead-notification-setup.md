@@ -25,7 +25,7 @@ From the `homeharvestnetwork-start` folder:
 supabase login
 supabase link --project-ref ozbgnmlccosoykavjkrj
 supabase secrets set RESEND_API_KEY=re_your_resend_api_key
-supabase secrets set LEADS_NOTIFY_TO=homeharvestnetwork@gmail.com
+supabase secrets set "LEADS_NOTIFY_TO=homeharvestnetwork@gmail.com,bob@homeharvestnetwork.co.za"
 supabase secrets set "LEADS_NOTIFY_FROM=Home Harvest Network <onboarding@resend.dev>"
 supabase secrets set HHN_WEBHOOK_SECRET=choose-a-long-random-secret
 supabase functions deploy notify-lead --no-verify-jwt
@@ -59,7 +59,7 @@ Use the same value you saved as `HHN_WEBHOOK_SECRET`.
 
 ## 4. Test
 
-Submit any form on the website. A new row should appear in `leads`, and an email should arrive at `homeharvestnetwork@gmail.com`.
+Submit any form on the website. A new row should appear in `leads`, and an email should arrive at every address in `LEADS_NOTIFY_TO` (comma-separated, no spaces needed around the commas).
 
 If the row appears but no email arrives, check:
 

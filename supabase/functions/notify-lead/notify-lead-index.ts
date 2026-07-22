@@ -118,10 +118,11 @@ Deno.serve(async (request) => {
   }
 
   const resendApiKey = Deno.env.get('RESEND_API_KEY');
-  const to = Deno.env.get('LEADS_NOTIFY_TO');
+  const toRaw = Deno.env.get('LEADS_NOTIFY_TO');
+  const to = toRaw ? toRaw.split(',').map((address) => address.trim()).filter(Boolean) : [];
   const from = Deno.env.get('LEADS_NOTIFY_FROM') || 'Home Harvest Network <onboarding@resend.dev>';
 
-  if (!resendApiKey || !to) {
+  if (!resendApiKey || !to.length) {
     return new Response(JSON.stringify({ error: 'Missing email environment variables' }), {
       status: 500,
       headers: { ...corsHeaders(), 'Content-Type': 'application/json' }
@@ -139,7 +140,7 @@ Deno.serve(async (request) => {
     },
     body: JSON.stringify({
       from,
-      to: [to],
+      to,
       subject: getSubject(lead),
       text: getTextBody(lead),
       html: getHtmlBody(lead)

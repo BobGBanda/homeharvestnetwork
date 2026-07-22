@@ -242,11 +242,13 @@
       font-size:44px;
       margin-bottom:8px;
       color:var(--green-dark);
+      text-align: center;
+      align-items: center;
     }
 
     .section-sub{
       color:var(--muted);
-      max-width:700px;
+      max-width:95%;
       margin-bottom:36px;
       font-size:17px;
       line-height:1.8;
@@ -374,46 +376,6 @@
       line-height:1.8;
     }
 
-    .cta-form{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(220px,1fr));
-      gap:12px;
-      max-width:760px;
-      margin:0 auto;
-    }
-
-    .cta-form input,
-    .cta-form select,
-    .cta-form textarea{
-      padding:15px 18px;
-      border:none;
-      border-radius:12px;
-      font-size:15px;
-      font-family:'Inter',sans-serif;
-      width:100%;
-    }
-
-    .cta-form select,
-    .cta-form textarea{
-      grid-column:1 / -1;
-    }
-
-    .cta-form textarea{
-      min-height:110px;
-      resize:vertical;
-    }
-
-    .cta-form button{
-      padding:12px 20px;
-      border:none;
-      border-radius:12px;
-      background:#88b67c;
-      color:#132015;
-      font-weight:700;
-      cursor:pointer;
-      grid-column:1 / -1;
-    }
-
     /* FOOTER */
 
     footer{
@@ -441,6 +403,11 @@
     .footer-right{
       color:var(--muted);
       font-size:14px;
+    }
+
+    .footer-right a{
+      color:var(--green-dark);
+      text-decoration:underline;
     }
 
     /* MOBILE */
@@ -597,10 +564,6 @@
     display:none;
   }
 
-  .cta-form{
-    grid-template-columns:1fr;
-  }
-
 }
 
 </style>
@@ -641,8 +604,8 @@
         <a href="contact.html">Contact</a>
       </div>
 
-      <a href="#waitlist" class="nav-btn">
-        Join Waitlist
+      <a href="subscriptions.html#subscribe" class="nav-btn">
+        Subscribe
       </a>
     </div>
   </nav>
@@ -666,8 +629,8 @@
 
         <div class="hero-buttons">
 
-          <a href="#waitlist" class="btn btn-primary">
-            Join the Waitlist
+          <a href="subscriptions.html#subscribe" class="btn btn-primary">
+            Subscribe Now
           </a>
 
           <a href="for-growers.html" class="btn btn-secondary">
@@ -688,6 +651,8 @@
       </div>
 
     </div>
+
+  </section>
 
 <!-- HOW IT WORKS -->
 
@@ -770,7 +735,7 @@
       </h2>
 
       <p class="section-sub">
-        Seasonal produce boxes designed for households of different sizes.
+        From a range of seasonal produce boxes tailored to households of different sizes. Every box is filled with fresh, locally sourced fruit and vegetables, with convenient bi-weekly delivery to your doorstep.
       </p>
 
       <div class="boxes">
@@ -793,13 +758,17 @@
             </div>
 
             <ul>
-              <li>4–5 seasonal items</li>
               <li>Ideal for 1–2 people</li>
-              <li>Weekly or bi-weekly delivery</li>
+              <li>4–5 seasonal items, including:</li>
+              <li>• Bunch of spinach</li>
+              <li>• 4 medium tomatoes</li>
+              <li>• 4 onions</li>
+              <li>• 4 potatoes</li>
+              <li>• 4 carrots</li>
             </ul>
 
-            <a href="#waitlist" class="btn btn-primary" data-box-choice="Mini Box">
-              Join Waitlist
+            <a href="subscriptions.html?box=Mini%20Box#subscribe" class="btn btn-primary" data-box-choice="Mini Box">
+              Subscribe
             </a>
 
           </div>
@@ -824,13 +793,19 @@
             </div>
 
             <ul>
-              <li>7–9 seasonal items</li>
               <li>Ideal for families</li>
-              <li>Flexible delivery schedule</li>
+              <li>Easy online plan management</li>
+              <li>Balanced produce mix, including:</li>
+              <li>• Bunch of spinach</li>
+              <li>• 8 potatoes</li>
+              <li>• 4 onions</li>
+              <li>• Half cabbage</li>
+              <li>• 6 carrots</li>
+              <li>• 4 tomatoes</li>
             </ul>
 
-            <a href="#waitlist" class="btn btn-primary" data-box-choice="Family Box">
-              Join Waitlist
+            <a href="subscriptions.html?box=Family%20Box#subscribe" class="btn btn-primary" data-box-choice="Family Box">
+              Subscribe
             </a>
 
           </div>
@@ -855,13 +830,21 @@
             </div>
 
             <ul>
-              <li>12–15 seasonal items</li>
               <li>Includes premium produce</li>
               <li>Best for larger households</li>
+              <li>12–15 seasonal items, including:</li>
+              <li>• Bunch of spinach</li>
+              <li>• Full head of cabbage</li>
+              <li>• 8 medium tomatoes</li>
+              <li>• 8 carrots</li>
+              <li>• 6 onions</li>
+              <li>• 10 potatoes</li>
+              <li>• 4 beetroot</li>
+              <li>• 2 butternut</li>
             </ul>
 
-            <a href="#waitlist" class="btn btn-primary" data-box-choice="Premium Box">
-              Join Waitlist
+            <a href="subscriptions.html?box=Premium%20Box#subscribe" class="btn btn-primary" data-box-choice="Premium Box">
+              Subscribe
             </a>
 
           </div>
@@ -1012,8 +995,8 @@
 
   <!-- CTA -->
 
-  <section class="cta-section" id="waitlist">
-    <div class="container">
+  <section class="cta-section" id="cta">
+    <div class="container" style="text-align:center;">
 
       <h2>
         Join the Fresh Food Revolution
@@ -1023,25 +1006,17 @@
         Subscribe to a weekly box, become a grower, or supply your business. Home Harvest Network is transforming how fresh food reaches KwaZulu-Natal and Western Cape households.
       </p>
 
-      <form class="cta-form" data-lead-form data-lead-type="waitlist" data-source-page="index.html">
-        <input name="name" type="text" placeholder="Your full name" required />
-        <input name="email" type="email" placeholder="Your email address" required />
-        <input name="phone" type="tel" placeholder="Phone number" required />
-        <input name="suburb" type="text" placeholder="Delivery suburb / area" required />
-        <select name="subject" data-box-select required>
-          <option value="">Which box are you interested in?</option>
-          <option>Mini Box</option>
-          <option>Family Box</option>
-          <option>Premium Box</option>
-         <!-- <option>Starter Box</option>
-          <option>Chef Box</option> -->
-          <option>Not sure yet</option>
-        </select>
-        <textarea name="message" rows="4" placeholder="Tell us your household size, preferred delivery frequency, produce preferences, allergies, and any delivery notes"></textarea>
-        <button type="submit">
-          Get Started
-        </button>
-      </form>
+      <div class="hero-buttons" style="justify-content:center;margin-top:28px;">
+        <a href="subscriptions.html#subscribe" class="btn btn-primary">
+          Subscribe to a box
+        </a>
+        <a href="for-growers.html" class="btn btn-secondary">
+          Become a Grower
+        </a>
+        <a href="for-business.html" class="btn btn-secondary">
+          Supply Your Business
+        </a>
+      </div>
 
     </div>
   </section>
@@ -1055,17 +1030,13 @@
       </div>
 
       <div class="footer-right">
-        © 2025 Home Harvest Network · KwaZulu-Natal, South Africa
+        © 2025 Home Harvest Network · KwaZulu-Natal, South Africa · <a href="terms.html">Terms &amp; Conditions</a>
       </div>
 
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="js/supabase-config.js"></script>
   <script src="js/mobile-nav.js"></script>
-  <script src="js/waitlist-box-choice.js"></script>
-  <script src="js/leads.js"></script>
 </body>
 
 </html>
