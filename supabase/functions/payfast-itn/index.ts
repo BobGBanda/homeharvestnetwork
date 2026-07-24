@@ -66,7 +66,7 @@ Deno.serve(async (request) => {
 
   const passphrase = Deno.env.get("PAYFAST_PASSPHRASE");
   const merchantId = Deno.env.get("PAYFAST_MERCHANT_ID");
-  const mode = Deno.env.get("PAYFAST_MODE") || "sandbox";
+  const mode = Deno.env.get("PAYFAST_MODE") || "live";
   const supabaseUrl = Deno.env.get("SUPABASE_URL");
   const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
   const resendApiKey = Deno.env.get("RESEND_API_KEY");
