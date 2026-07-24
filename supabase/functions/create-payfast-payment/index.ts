@@ -4,12 +4,9 @@ import { createHash } from "node:crypto";
 // ---- Prices are decided HERE, never trusted from the browser. ----
 // Edit these to your real prices (ZAR). Keys are "Plan name|frequency".
 const PRICING: Record<string, number> = {
-  "Mini Box|weekly": 120,
-  "Mini Box|monthly": 240,
-  "Family Box|weekly": 220,
-  "Family Box|monthly": 440,
-  "Premium Box|weekly": 350,
-  "Premium Box|monthly": 700,
+  "Mini Box|weekly": 390,
+  "Family Box|weekly": 540,
+  "Premium Box|weekly": 720,
 };
 
 // PayFast frequency codes: 1 Daily, 2 Weekly, 3 Monthly, 4 Quarterly, 5 Biannual, 6 Annual
