@@ -100,4 +100,3 @@ If you are not satisfied with how your request has been handled, you have the ri
 
 ---
 
-*This document is a draft prepared for Home Harvest Network's internal review. It should be reviewed by a qualified South African attorney before publication to ensure full compliance with the Consumer Protection Act, the Electronic Communications and Transactions Act, and any other applicable law.*
