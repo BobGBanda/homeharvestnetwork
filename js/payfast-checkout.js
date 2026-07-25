@@ -23,10 +23,9 @@
 
         <form data-pf-form>
           <div style="margin-bottom:12px;">
-            <label style="display:block;font-size:13px;color:#667063;margin-bottom:4px;">Billing frequency</label>
+            <label style="display:block;font-size:13px;color:#667063;margin-bottom:4px;">Delivery schedule</label>
             <select name="frequency" required style="width:100%;padding:10px;border:1px solid #ddd7ca;border-radius:8px;">
-              <option value="weekly">Weekly</option>
-              <option value="monthly">Monthly</option>
+              <option value="monthly">Bi-weekly delivery</option>
             </select>
           </div>
           <div style="margin-bottom:12px;">
@@ -65,7 +64,7 @@
     modal.style.display = 'flex';
     modal.querySelector('[data-pf-title]').textContent = `Subscribe to the ${plan}`;
     modal.querySelector('[data-pf-price]').textContent =
-      'Choose weekly or monthly billing on the next step. You will be redirected to PayFast to complete payment securely.';
+      'Choose bi-weekly delivery with monthly billing on the next step. You will be redirected to PayFast to complete payment securely.';
     modal.dataset.plan = plan;
 
     modal.querySelector('[data-pf-cancel]').onclick = () => {

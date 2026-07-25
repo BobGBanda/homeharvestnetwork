@@ -672,13 +672,14 @@
       </h2>
 
       <p class="section-sub">
-        Pay securely by debit or credit card via PayFast. Choose recurring billing so we bill you automatically each cycle, or pay-per-delivery if you'd rather approve each payment yourself.
+        Pay securely by debit or credit card via PayFast. Delivery is bi-weekly, and billing is monthly on a recurring basis.
       </p>
 
       <form class="checkout-form" data-checkout-form>
-
+        <p class="full-width" style="margin:0;color:#667063;font-size:14px;">
+            Delivery schedule: Bi-weekly 
+        </p>
         <div class="checkout-grid">
-
           <label>
             Box
             <select name="plan" required>
@@ -690,10 +691,10 @@
           </label>
 
           <label>
-            Delivery frequency
+            Billing frequency
             <select name="frequency" required>
-              <option value="">Choose frequency</option>
-              <option value="weekly">Bi-Weekly</option>
+              <option value="">Choose billing frequency</option>
+              <option value="monthly">Monthly</option>
             </select>
           </label>
 
@@ -702,15 +703,14 @@
             <div class="radio-row">
               <label class="radio-option">
                 <input type="radio" name="billing_mode" value="recurring" checked>
-                Recurring (auto-billed each cycle)
+                Monthly recurring billing (auto-billed each cycle)
               </label>
               <label class="radio-option">
                 <input type="radio" name="billing_mode" value="once_off">
-                Pay per delivery (once-off each time)
+                Once-off Payment
               </label>
             </div>
           </label>
-
           <label>
             Full name
             <input name="name" type="text" placeholder="Your full name" required>

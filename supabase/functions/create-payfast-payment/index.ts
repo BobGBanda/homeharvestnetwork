@@ -4,17 +4,14 @@ import { createHash } from "node:crypto";
 // ---- Prices are decided HERE, never trusted from the browser. ----
 // Edit these to your real prices (ZAR). Keys are "Plan name|frequency".
 const PRICING: Record<string, number> = {
-  "Mini Box|weekly": 120,
-  "Mini Box|monthly": 240,
-  "Family Box|weekly": 220,
-  "Family Box|monthly": 440,
-  "Premium Box|weekly": 350,
-  "Premium Box|monthly": 700,
+  "Mini Box|monthly": 390,
+  "Family Box|monthly": 540,
+  "Premium Box|monthly": 720,
 };
 
 // PayFast frequency codes: 1 Daily, 2 Weekly, 3 Monthly, 4 Quarterly, 5 Biannual, 6 Annual
 const FREQUENCY_CODE: Record<string, string> = {
-  weekly: "2",
+  //weekly: "2",
   monthly: "3",
 };
 
@@ -100,7 +97,7 @@ Deno.serve(async (request) => {
   const merchantId = Deno.env.get("PAYFAST_MERCHANT_ID");
   const merchantKey = Deno.env.get("PAYFAST_MERCHANT_KEY");
   const passphrase = Deno.env.get("PAYFAST_PASSPHRASE");
-  const mode = Deno.env.get("PAYFAST_MODE") || "sandbox"; // "sandbox" | "live"
+  const mode = Deno.env.get("PAYFAST_MODE") || "live"; // "sandbox" | "live"
   const siteUrl = Deno.env.get("SITE_URL"); // e.g. https://homeharvestnetwork.co.za
   const supabaseUrl = Deno.env.get("SUPABASE_URL");
   const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
