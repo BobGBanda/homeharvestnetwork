@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-5M2VQ3QX");</script><!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Subscriptions | Home Harvest Network</title>
@@ -443,6 +444,7 @@
   <link rel="stylesheet" href="css/mobile-nav.css">
 </head>
 <body>
+<!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5M2VQ3QX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
 
   <!-- NAV -->
 
@@ -526,6 +528,9 @@
       <p class="section-sub">
         Choose a produce box that fits your household, delivery rhythm, and cooking habits.
       </p>
+      <p class="section-sub" style="margin-top:-20px;color:#8a5b2a;">
+        Temporary test option: use the R5 test plan below for a safe live PayFast verification, then remove it after testing.
+      </p>
 
       <div class="plans">
         <div class="plan">
@@ -604,7 +609,27 @@
           <a href="#subscribe" data-box-choice="Premium Box">
             Choose Premium
           </a>
-        </div>
+        <!-- </div>
+               <div class="plan" style="border:2px solid #8a5b2a;background:#fffaf0;">   
+        <div class="plan" style="border:2px solid #8a5b2a;background:#fffaf0;">
+          <h3>
+            Test Mini Box
+          </h3>
+
+          <p>
+            Temporary live testing plan for verifying PayFast and database writes with a R5 charge.
+          </p>
+
+          <ul>
+            <li>Use only for testing</li>
+            <li>Charges R5.00</li>
+            <li>Same checkout flow as the live plans</li>
+          </ul>
+
+          <a href="#subscribe" data-box-choice="Test Mini Box">
+            Choose Test Plan
+          </a>
+        </div>-->
       </div>
 
     </div>
@@ -672,13 +697,14 @@
       </h2>
 
       <p class="section-sub">
-        Pay securely by debit or credit card via PayFast. Choose recurring billing so we bill you automatically each cycle, or pay-per-delivery if you'd rather approve each payment yourself.
+        Pay securely by debit or credit card via PayFast. Delivery is bi-weekly, and billing is monthly on a recurring basis.
       </p>
 
       <form class="checkout-form" data-checkout-form>
-
+        <p class="full-width" style="margin:0;color:#667063;font-size:14px;">
+            Delivery schedule: Bi-weekly 
+        </p>
         <div class="checkout-grid">
-
           <label>
             Box
             <select name="plan" required>
@@ -686,14 +712,15 @@
               <option value="Mini Box">Mini Box</option>
               <option value="Family Box">Family Box</option>
               <option value="Premium Box">Premium Box</option>
+              <option value="Test Mini Box">Test Mini Box</option>
             </select>
           </label>
 
           <label>
-            Delivery frequency
+            Billing frequency
             <select name="frequency" required>
-              <option value="">Choose frequency</option>
-              <option value="weekly">Bi-Weekly</option>
+              <option value="">Choose billing frequency</option>
+              <option value="monthly">Monthly</option>
             </select>
           </label>
 
@@ -702,15 +729,14 @@
             <div class="radio-row">
               <label class="radio-option">
                 <input type="radio" name="billing_mode" value="recurring" checked>
-                Recurring (auto-billed each cycle)
+                Monthly recurring billing (auto-billed each cycle)
               </label>
               <label class="radio-option">
                 <input type="radio" name="billing_mode" value="once_off">
-                Pay per delivery (once-off each time)
+                Once-off Payment
               </label>
             </div>
           </label>
-
           <label>
             Full name
             <input name="name" type="text" placeholder="Your full name" required>

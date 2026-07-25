@@ -13,6 +13,7 @@ create table if not exists public.subscription_orders (
   m_payment_id text not null unique,       -- our own order reference, sent to PayFast
   plan text not null,                       -- 'Mini Box' | 'Family Box' | 'Premium Box'
   billing_frequency text not null,          -- 'weekly' | 'monthly'
+  billing_mode text not null default 'recurring', -- 'recurring' | 'once_off'
   amount numeric(10,2) not null,            -- ZAR, decided server-side, never trusted from the client
 
   name text,

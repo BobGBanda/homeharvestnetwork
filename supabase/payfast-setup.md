@@ -8,16 +8,16 @@ How it works:
 1. A customer clicks "Subscribe" on a plan, fills in their details and billing frequency.
 2. The browser calls the `create-payfast-payment` Edge Function. **The price is decided
    entirely inside that function** (see the `PRICING` table in
-   `supabase/functions/create-payfast-payment/index.ts`) — the browser only sends the plan
+   `supabase/functions/create-payfast-payment/index.ts`) - the browser only sends the plan
    name and frequency, never an amount, so nobody can tamper with the price.
-3. That function creates a `pending` row in `subscription_orders`, builds the signed PayFast
-   fields, and returns them. The browser auto-submits a hidden form to PayFast's hosted
+3. That function creates a `pending` row in `subscription_orders`, including the billing mode,
+   builds the signed PayFast fields, and returns them. The browser auto-submits a hidden form to PayFast's hosted
    checkout, where the customer enters their card details (PayFast is PCI DSS Level 1
-   certified — card details never touch your server).
+   certified - card details never touch your server).
 4. Once paid, PayFast sends a server-to-server ITN (Instant Transaction Notification) to the
    `payfast-itn` Edge Function, which verifies the signature, re-validates with PayFast,
-   checks the amount, updates the order to `complete`, stores the recurring billing token,
-   and emails you a notification.
+   checks the amount, updates the order to `complete`, stores the recurring billing token and
+   raw ITN payload, and emails you a notification.
 5. From then on, PayFast bills the customer automatically at the chosen frequency and sends a
    new ITN for each charge.
 
@@ -35,7 +35,7 @@ From the Supabase SQL editor, run `supabase/migrations/0001_subscription_orders.
 
 1. Sign up at https://www.payfast.co.za (or use your existing account).
 2. Go to `Settings` and note your **Merchant ID** and **Merchant Key**.
-3. Set a **Passphrase** under `Settings -> Integration` and enable **Recurring Billing** —
+3. Set a **Passphrase** under `Settings -> Integration` and enable **Recurring Billing** -
    without a passphrase and recurring billing enabled, subscription payments will fail with
    a signature mismatch.
 4. For testing first, use PayFast's sandbox: https://sandbox.payfast.co.za with the standard
@@ -62,7 +62,7 @@ supabase functions deploy create-payfast-payment --no-verify-jwt
 supabase functions deploy payfast-itn --no-verify-jwt
 ```
 
-Note: `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` don't need to be set manually — Supabase
+Note: `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` don't need to be set manually - Supabase
 provides those automatically inside every Edge Function.
 
 ## 5. Test in sandbox
@@ -71,8 +71,8 @@ provides those automatically inside every Edge Function.
 2. Go to `subscriptions.html`, click Subscribe on a plan, fill in the form.
 3. You should land on PayFast's sandbox checkout. Use a sandbox test card (PayFast's docs
    list test card numbers) to complete payment.
-4. Check the `subscription_orders` table — the row should flip from `pending` to `complete`,
-   and you should get a confirmation email.
+4. Check the `subscription_orders` table - the row should flip from `pending` to `complete`,
+   with `pf_payment_id`, `payfast_token`, and `raw_itn` populated, and you should get a confirmation email.
 5. In your PayFast sandbox dashboard, under `Transactions -> Customer Subscriptions`, you
    should see the new subscription with the correct frequency and amount.
 
@@ -92,7 +92,7 @@ using the `payfast_token` stored on each row in `subscription_orders`.
 
 ## Security notes
 
-- Prices are only ever set server-side in the Edge Function — never trust an amount sent
+- Prices are only ever set server-side in the Edge Function - never trust an amount sent
   from the browser.
 - `subscription_orders` has Row Level Security enabled with no policies, so the anon key
   (which is public, by design, and safe to ship in `js/supabase-config.js`) cannot read or

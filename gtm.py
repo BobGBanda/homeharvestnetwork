@@ -4,7 +4,7 @@ HEAD = '<!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[
 
 BODY = '<!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5M2VQ3QX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->'
 
-files = ["index.html","about.html","contact.html","for-business.html","for-growers.html","subscriptions.html"]
+files = ["index.html","about.html","contact.html","for-business.html","for-growers.html","subscriptions.html","terms.html","thank-you.html"]
 
 for f in files:
     if not os.path.exists(f):
@@ -22,3 +22,5 @@ for f in files:
     print("UPDATED: " + f)
 
 print("Done.")
+
+

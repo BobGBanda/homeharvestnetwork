@@ -11,7 +11,9 @@ function pfEncode(value: string): string {
 
 function computeSignature(fields: Record<string, string>, passphrase: string | undefined) {
   // The ITN's own "signature" field must be excluded before recomputing.
-  const entries = Object.entries(fields).filter(([key, value]) => key !== "signature" && value !== "");
+  const entries = Object.entries(fields)
+    .filter(([key, value]) => key !== "signature" && value !== "")
+    .sort(([a], [b]) => a.localeCompare(b));
   let paramString = entries.map(([key, value]) => `${key}=${pfEncode(value)}`).join("&");
 
   if (passphrase) {
@@ -82,7 +84,11 @@ Deno.serve(async (request) => {
   // 1. Verify the signature PayFast sent matches what we compute ourselves.
   const expectedSignature = computeSignature(fields, passphrase);
   if (expectedSignature !== fields.signature) {
-    console.error("PayFast ITN signature mismatch");
+    console.error("PayFast ITN signature mismatch", {
+      expectedPrefix: expectedSignature.slice(0, 8),
+      receivedPrefix: (fields.signature || "").slice(0, 8),
+      fieldNames: Object.keys(fields).filter((key) => key !== "signature").sort(),
+    });
     return new Response("Invalid signature", { status: 400 });
   }
 
@@ -181,6 +187,60 @@ Deno.serve(async (request) => {
     const text = rows.map(([label, value]) => `${label}: ${value || "-"}`).join("\n");
 
     await sendEmail({ apiKey: resendApiKey, from: notifyFrom, to: notifyTo, subject, html, text });
+
+    if (order.email) {
+      const customerSubject = `Your Home Harvest Network subscription is confirmed`;
+      const customerHtml = `
+        <div style="font-family:Arial,sans-serif;line-height:1.5;color:#172019;">
+          <h2 style="margin:0 0 12px;color:#2f4934;">Payment received</h2>
+          <p style="margin:0 0 12px;">Hi ${escapeHtml(order.name || "there")},</p>
+          <p style="margin:0 0 12px;">
+            Thanks for your order. We’ve received your payment for the ${escapeHtml(order.plan)} subscription
+            and your subscription is now active.
+          </p>
+          <table style="border-collapse:collapse;width:100%;max-width:680px;border:1px solid #e7e2d8;">
+            ${[
+              ["Plan", order.plan],
+              ["Billing frequency", order.billing_frequency],
+              ["Amount", `R${expectedAmount.toFixed(2)}`],
+              ["Order reference", order.m_payment_id],
+              ["PayFast payment id", fields.pf_payment_id || "-"],
+            ]
+              .map(
+                ([label, value]) => `
+              <tr>
+                <td style="padding:8px 12px;border-bottom:1px solid #e7e2d8;color:#667063;">${escapeHtml(label)}</td>
+                <td style="padding:8px 12px;border-bottom:1px solid #e7e2d8;color:#172019;">${escapeHtml(value || "-")}</td>
+              </tr>`
+              )
+              .join("")}
+          </table>
+          <p style="margin:12px 0 0;">We’ll be in touch soon to confirm your delivery day and drop-off point.</p>
+        </div>
+      `;
+      const customerText = [
+        `Hi ${order.name || "there"},`,
+        "",
+        `Thanks for your order. We’ve received your payment for the ${order.plan} subscription and your subscription is now active.`,
+        "",
+        `Plan: ${order.plan}`,
+        `Billing frequency: ${order.billing_frequency}`,
+        `Amount: R${expectedAmount.toFixed(2)}`,
+        `Order reference: ${order.m_payment_id}`,
+        `PayFast payment id: ${fields.pf_payment_id || "-"}`,
+        "",
+        `We’ll be in touch soon to confirm your delivery day and drop-off point.`,
+      ].join("\n");
+
+      await sendEmail({
+        apiKey: resendApiKey,
+        from: notifyFrom,
+        to: [order.email],
+        subject: customerSubject,
+        html: customerHtml,
+        text: customerText,
+      });
+    }
   }
 
   // PayFast just needs a 200 OK response body; content doesn't matter.

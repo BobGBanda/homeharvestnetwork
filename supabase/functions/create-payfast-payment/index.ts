@@ -4,14 +4,15 @@ import { createHash } from "node:crypto";
 // ---- Prices are decided HERE, never trusted from the browser. ----
 // Edit these to your real prices (ZAR). Keys are "Plan name|frequency".
 const PRICING: Record<string, number> = {
-  "Mini Box|weekly": 390,
-  "Family Box|weekly": 540,
-  "Premium Box|weekly": 720,
+  "Mini Box|monthly": 390,
+  "Family Box|monthly": 540,
+  "Premium Box|monthly": 720,
+  "Test Mini Box|monthly": 5.0,
 };
 
 // PayFast frequency codes: 1 Daily, 2 Weekly, 3 Monthly, 4 Quarterly, 5 Biannual, 6 Annual
 const FREQUENCY_CODE: Record<string, string> = {
-  weekly: "2",
+  //weekly: "2",
   monthly: "3",
 };
 
@@ -97,7 +98,7 @@ Deno.serve(async (request) => {
   const merchantId = Deno.env.get("PAYFAST_MERCHANT_ID");
   const merchantKey = Deno.env.get("PAYFAST_MERCHANT_KEY");
   const passphrase = Deno.env.get("PAYFAST_PASSPHRASE");
-  const mode = Deno.env.get("PAYFAST_MODE") || "sandbox"; // "sandbox" | "live"
+  const mode = Deno.env.get("PAYFAST_MODE") || "live"; // "sandbox" | "live"
   const siteUrl = Deno.env.get("SITE_URL"); // e.g. https://homeharvestnetwork.co.za
   const supabaseUrl = Deno.env.get("SUPABASE_URL");
   const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
@@ -145,7 +146,7 @@ Deno.serve(async (request) => {
   const orderedFields: [string, string][] = [
     ["merchant_id", merchantId],
     ["merchant_key", merchantKey],
-    ["return_url", `${siteUrl}/subscriptions.html?payment=success`],
+    ["return_url", `${siteUrl}/thank-you.html?payment=success&plan=${encodeURIComponent(plan)}&m_payment_id=${encodeURIComponent(mPaymentId)}`],
     ["cancel_url", `${siteUrl}/subscriptions.html?payment=cancelled`],
     ["notify_url", `${supabaseUrl}/functions/v1/payfast-itn`],
     ["name_first", nameFirst],

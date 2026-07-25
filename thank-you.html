@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-5M2VQ3QX");</script><!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | Home Harvest Network</title>
+
+  <link rel="icon" type="image/png" href="photo%20rip/logo-banner.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --green: #5d8c51;
+      --green-dark: #2f4934;
+      --cream: #f7f3eb;
+      --sand: #ece4d6;
+      --text: #172019;
+      --muted: #667063;
+      --white: #ffffff;
+      --border: #ddd7ca;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1150px, 90%);
+      margin: auto;
+    }
+
+    /* NAV */
+
+    nav {
+      background: rgba(247, 243, 235, .95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-wrap {
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 10px 0;
+    }
+
+    .brand-nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: nowrap;
+      max-width: 420px;
+    }
+
+    .brand-text {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 100px;
+      width: auto;
+      display: block;
+      border-radius: 0;
+    }
+
+    .brand-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(15px, 2.6vw, 25px);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      text-transform: uppercase;
+      margin: 0;
+      color: var(--green-dark);
+    }
+
+    .brand-title span {
+      display: block;
+    }
+
+    .brand-title span:nth-child(2) {
+      margin-left: 1.1rem;
+    }
+
+    .brand-title span:nth-child(3) {
+      margin-left: 2.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      color: var(--muted);
+      font-size: 15px;
+      align-items: center;
+    }
+
+    .nav-links a:hover {
+      color: var(--green-dark);
+    }
+
+    .nav-btn {
+      background: var(--green-dark);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* THANK YOU SECTION */
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .thanks-section {
+      padding: 70px 0 90px;
+      width: 100%;
+    }
+
+    .thanks-card {
+      max-width: 640px;
+      margin: 0 auto;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 56px 44px;
+      text-align: center;
+    }
+
+    .thanks-icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .thanks-icon svg {
+      width: 34px;
+      height: 34px;
+    }
+
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      line-height: 1.15;
+      margin-bottom: 18px;
+      color: var(--green-dark);
+    }
+
+    .thanks-card p {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 14px;
+    }
+
+    .order-ref {
+      display: inline-block;
+      margin: 8px 0 20px;
+      padding: 10px 16px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 14px;
+      color: var(--green-dark);
+      font-weight: 600;
+    }
+
+    .next-steps {
+      text-align: left;
+      background: var(--cream);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin: 28px 0;
+    }
+
+    .next-steps h3 {
+      font-size: 16px;
+      color: var(--green-dark);
+      margin-bottom: 12px;
+    }
+
+    .next-steps ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .next-steps li {
+      color: var(--muted);
+      font-size: 14.5px;
+      margin-bottom: 8px;
+      padding-left: 22px;
+      position: relative;
+    }
+
+    .next-steps li::before {
+      content: "🌿";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .thanks-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 14.5px;
+    }
+
+    .btn-primary {
+      background: var(--green-dark);
+      color: white;
+    }
+
+    .btn-secondary {
+      background: var(--sand);
+      color: var(--text);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 8px 0;
+      border-top: 1px solid var(--border);
+      background: var(--cream);
+    }
+
+    .footer-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      text-align: center;
+    }
+
+    .footer-logo img {
+      height: 300px;
+      width: auto;
+      display: block;
+      border-radius: 0;
+    }
+
+    .footer-right {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-right a {
+      color: var(--green-dark);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+      .thanks-card {
+        padding: 40px 24px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+  </style>
+  <link rel="stylesheet" href="css/mobile-nav.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5M2VQ3QX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
+
+  <!-- NAV -->
+
+  <nav>
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand-nav">
+        <div class="logo">
+          <img src="photo%20rip/logo-banner.png" alt="Home Harvest Network Logo">
+        </div>
+        <div class="brand-text">
+          <h1 class="brand-title">
+            <span>Home</span>
+            <span>Harvest</span>
+            <span>Network</span>
+          </h1>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="subscriptions.html">Subscriptions</a>
+        <a href="for-growers.html">For Growers</a>
+        <a href="for-business.html">For Business</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <a href="subscriptions.html#subscribe" class="nav-btn">
+        Subscribe
+      </a>
+    </div>
+  </nav>
+
+  <!-- THANK YOU -->
+
+  <main>
+    <section class="thanks-section">
+      <div class="container">
+        <div class="thanks-card">
+          <div class="thanks-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <div class="eyebrow">Payment Successful</div>
+          <h1 data-thanks-title>Thank you for subscribing!</h1>
+          <p data-thanks-body>
+            Your box is booked in. We've received your payment and your subscription is now active.
+            A confirmation email is on its way to you.
+          </p>
+
+          <div class="order-ref" data-order-ref style="display:none;"></div>
+
+          <div class="next-steps">
+            <h3>What happens next</h3>
+            <ul>
+              <li>You'll get a confirmation email with your subscription details.</li>
+              <li>Our team will reach out to confirm your delivery day and drop-off point.</li>
+              <li>Your first fresh box will arrive on your scheduled delivery date.</li>
+              <li>Questions in the meantime? Just reply to the confirmation email or contact us.</li>
+            </ul>
+          </div>
+
+          <div class="thanks-actions">
+            <a href="index.html" class="btn btn-primary">Back to home</a>
+            <a href="contact.html" class="btn btn-secondary">Contact us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container footer-wrap">
+      <div class="footer-logo">
+        <img src="photo%20rip/logo-bottom.png" alt="Home Harvest Network Logo">
+      </div>
+
+      <div class="footer-right">
+        © 2025 Home Harvest Network · KwaZulu-Natal, South Africa · <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/mobile-nav.js"></script>
+  <script>
+    // If PayFast (or a direct link) passes a payment id / plan back in the
+    // query string, show it so the customer has a reference for support.
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const paymentId = params.get('m_payment_id') || params.get('payment_id');
+      const plan = params.get('plan');
+
+      if (plan) {
+        document.querySelector('[data-thanks-title]').textContent = `Thanks for subscribing to the ${plan}!`;
+      }
+
+      if (paymentId) {
+        const ref = document.querySelector('[data-order-ref]');
+        ref.textContent = `Order reference: ${paymentId}`;
+        ref.style.display = 'inline-block';
+      }
+    }());
+  </script>
+</body>
+</html>
