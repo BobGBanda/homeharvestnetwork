@@ -4,9 +4,9 @@ import { createHash } from "node:crypto";
 // ---- Prices are decided HERE, never trusted from the browser. ----
 // Edit these to your real prices (ZAR). Keys are "Plan name|frequency".
 const PRICING: Record<string, number> = {
-  "Mini Box|monthly": 390,
-  "Family Box|monthly": 540,
-  "Premium Box|monthly": 720,
+  "Mini Box|monthly": 350,
+  "Family Box|monthly": 420,
+  "Premium Box|monthly": 500,
   "Test Mini Box|monthly": 5.0,
 };
 
