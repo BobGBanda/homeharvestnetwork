@@ -10,6 +10,9 @@ const PRICING: Record<string, number> = {
   "Test Mini Box|monthly": 5.0,
 };
 
+const INTRO_DISCOUNT_PERCENT = 30;
+const INTRO_DISCOUNT_LIMIT = 15;
+
 // PayFast frequency codes: 1 Daily, 2 Weekly, 3 Monthly, 4 Quarterly, 5 Biannual, 6 Annual
 const FREQUENCY_CODE: Record<string, string> = {
   //weekly: "2",
@@ -112,6 +115,24 @@ Deno.serve(async (request) => {
 
   const supabase = createClient(supabaseUrl, serviceRoleKey);
 
+  const { count: completedCount, error: countError } = await supabase
+    .from("subscription_orders")
+    .select("id", { count: "exact", head: true })
+    .eq("status", "complete");
+
+  if (countError) {
+    console.error("Failed to count completed orders:", countError);
+    return new Response(JSON.stringify({ error: "Could not check discount eligibility" }), {
+      status: 500,
+      headers: { ...corsHeaders(), "Content-Type": "application/json" },
+    });
+  }
+
+  const discountEligible = (completedCount ?? 0) < INTRO_DISCOUNT_LIMIT;
+  const discountRate = discountEligible ? INTRO_DISCOUNT_PERCENT / 100 : 0;
+  const discountedAmount = Number((amount * (1 - discountRate)).toFixed(2));
+  const discountAmount = Number((amount - discountedAmount).toFixed(2));
+
   const mPaymentId = crypto.randomUUID();
   const [nameFirst, ...rest] = name.split(" ");
   const nameLast = rest.join(" ") || nameFirst;
@@ -121,7 +142,7 @@ Deno.serve(async (request) => {
     plan,
     billing_frequency: frequency,
     billing_mode: billingMode,
-    amount,
+    amount: discountedAmount,
     name,
     email,
     phone,
@@ -153,9 +174,14 @@ Deno.serve(async (request) => {
     ["name_last", nameLast],
     ["email_address", email],
     ["m_payment_id", mPaymentId],
-    ["amount", amount.toFixed(2)],
+    ["amount", discountedAmount.toFixed(2)],
     ["item_name", `${plan} subscription (${frequency})`],
-    ["item_description", `Home Harvest Network ${plan}, billed ${frequency}`],
+    [
+      "item_description",
+      discountEligible
+        ? `Home Harvest Network ${plan}, billed ${frequency} (intro offer applied: 30% off, saved R${discountAmount.toFixed(2)})`
+        : `Home Harvest Network ${plan}, billed ${frequency}`,
+    ],
     // Recurring billing can ONLY use tokenised card payments — PayFast has
     // no way to auto-bill future cycles via EFT, so "cc" is mandatory here
     // regardless of account settings.
@@ -170,7 +196,7 @@ Deno.serve(async (request) => {
     ...(billingMode === "recurring"
       ? ([
           ["subscription_type", "1"],
-          ["recurring_amount", amount.toFixed(2)],
+          ["recurring_amount", discountedAmount.toFixed(2)],
           ["frequency", frequencyCode],
           ["cycles", "0"], // 0 = bill until the customer cancels
         ] as [string, string][])
