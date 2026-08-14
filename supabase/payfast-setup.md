@@ -40,6 +40,12 @@ From the Supabase SQL editor, run `supabase/migrations/0001_subscription_orders.
    a signature mismatch.
 4. For testing first, use PayFast's sandbox: https://sandbox.payfast.co.za with the standard
    sandbox merchant ID `10000100` / key `46f0cd694581a` (no live money moves in sandbox).
+5. In the PayFast dashboard, set the **Notify URL** to:
+
+   `https://ozbgnmlccosoykavjkrj.supabase.co/functions/v1/payfast-itn`
+
+   This is the Supabase Edge Function that receives the ITN, verifies it, and updates
+   `subscription_orders`.
 
 ## 4. Deploy the Edge Functions
 
