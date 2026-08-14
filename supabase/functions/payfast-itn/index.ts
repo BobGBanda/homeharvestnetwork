@@ -12,8 +12,8 @@ function pfEncode(value: string): string {
 function computeSignature(fields: Record<string, string>, passphrase: string | undefined) {
   // The ITN's own "signature" field must be excluded before recomputing.
   const entries = Object.entries(fields)
-    .filter(([key]) => key !== "signature")
-    .sort(([a], [b]) => a.localeCompare(b));
+    .filter(([key, value]) => key !== "signature" && value !== "")
+    .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0));
   let paramString = entries.map(([key, value]) => `${key}=${pfEncode(value)}`).join("&");
 
   if (passphrase) {
