@@ -100,7 +100,7 @@
     const formData = new FormData(form);
     const payload = {
       plan: formData.get('plan'),
-      frequency: formData.get('frequency'),
+      frequency: 'monthly',
       billingMode: formData.get('billing_mode') || 'recurring',
       name: formData.get('name'),
       email: formData.get('email'),
@@ -108,8 +108,8 @@
       suburb: formData.get('suburb'),
     };
 
-    if (!payload.plan || !payload.frequency) {
-      setStatus('Please choose a box and a delivery frequency.', 'error');
+    if (!payload.plan) {
+      setStatus('Please choose a box to continue.', 'error');
       return;
     }
 
